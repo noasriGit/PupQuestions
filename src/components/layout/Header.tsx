@@ -13,6 +13,7 @@ export function Header() {
           <Link
             href="/"
             className="text-lg font-bold tracking-tight text-stone-900 transition hover:text-amber-800"
+            aria-label={`${SITE_NAME} home`}
           >
             {SITE_NAME}
           </Link>

@@ -30,6 +30,7 @@ export function BreedListArticlePage({ article }: BreedListArticlePageProps) {
   return (
     <>
       <ArticleHeader
+        headingId="article-title"
         title={article.title}
         description={article.description}
         breadcrumbs={[
@@ -54,7 +55,7 @@ export function BreedListArticlePage({ article }: BreedListArticlePageProps) {
         }
       />
 
-      <Container size="narrow">
+      <Container size="narrow" as="article" aria-labelledby="article-title">
         <QuickAnswerBox variant="neutral" label="Quick summary" className="mt-8">
           {article.quickAnswer}
         </QuickAnswerBox>

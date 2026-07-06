@@ -34,6 +34,9 @@ export function SearchForm({
 
   return (
     <form className={className} onSubmit={handleSubmit} role="search">
+      <label htmlFor="site-search" className="sr-only">
+        {placeholder}
+      </label>
       <div className="relative">
         <span
           className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-stone-400"
@@ -53,17 +56,18 @@ export function SearchForm({
           </svg>
         </span>
         <input
+          id="site-search"
           type="search"
           name="q"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          aria-label={placeholder}
           placeholder={placeholder}
           enterKeyHint="search"
+          autoComplete="off"
           className={cn(
             "w-full rounded-xl border border-stone-200 bg-white py-3.5 pl-12 pr-24 text-base text-stone-900 shadow-sm",
             "placeholder:text-stone-400",
-            "focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-200",
+            "focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-300",
             inputClassName,
           )}
         />

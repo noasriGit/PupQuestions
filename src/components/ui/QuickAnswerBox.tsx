@@ -1,4 +1,6 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { useId, type ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
 
@@ -44,9 +46,12 @@ export function QuickAnswerBox({
   className,
 }: QuickAnswerBoxProps) {
   const styles = variantStyles[variant];
+  const labelId = useId();
 
   return (
     <div
+      role="region"
+      aria-labelledby={labelId}
       className={cn(
         "rounded-xl border p-5 sm:p-6",
         styles.container,
@@ -64,7 +69,7 @@ export function QuickAnswerBox({
           A
         </span>
         <div>
-          <p className={cn("text-xs font-semibold uppercase tracking-wide", styles.label)}>
+          <p id={labelId} className={cn("text-xs font-semibold uppercase tracking-wide", styles.label)}>
             {label}
           </p>
           <div className="mt-1.5 text-base font-medium leading-relaxed text-stone-900">

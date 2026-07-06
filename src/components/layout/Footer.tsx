@@ -16,6 +16,7 @@ export function Footer() {
             <Link
               href="/"
               className="text-base font-bold text-stone-900 transition hover:text-amber-800"
+              aria-label={`${SITE_NAME} home`}
             >
               {SITE_NAME}
             </Link>
@@ -25,8 +26,13 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold text-stone-900">Topics</p>
-            <ul className="mt-3 space-y-2.5 text-sm text-stone-600">
+            <p id="footer-topics-heading" className="text-sm font-semibold text-stone-900">
+              Topics
+            </p>
+            <ul
+              className="mt-3 space-y-2.5 text-sm text-stone-600"
+              aria-labelledby="footer-topics-heading"
+            >
               {sections.slice(0, 4).map((section) => (
                 <li key={section.slug}>
                   <Link
@@ -41,8 +47,13 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold text-stone-900">More topics</p>
-            <ul className="mt-3 space-y-2.5 text-sm text-stone-600">
+            <p id="footer-more-topics-heading" className="text-sm font-semibold text-stone-900">
+              More topics
+            </p>
+            <ul
+              className="mt-3 space-y-2.5 text-sm text-stone-600"
+              aria-labelledby="footer-more-topics-heading"
+            >
               {sections.slice(4).map((section) => (
                 <li key={section.slug}>
                   <Link
@@ -57,8 +68,13 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold text-stone-900">About</p>
-            <ul className="mt-3 space-y-2.5 text-sm text-stone-600">
+            <p id="footer-about-heading" className="text-sm font-semibold text-stone-900">
+              About
+            </p>
+            <ul
+              className="mt-3 space-y-2.5 text-sm text-stone-600"
+              aria-labelledby="footer-about-heading"
+            >
               <li>
                 <Link href="/about" className="transition hover:text-amber-800">
                   About
@@ -75,6 +91,11 @@ export function Footer() {
               <li>
                 <Link href="/contact" className="transition hover:text-amber-800">
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/accessibility" className="transition hover:text-amber-800">
+                  Accessibility
                 </Link>
               </li>
               <li>

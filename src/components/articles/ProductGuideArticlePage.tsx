@@ -30,6 +30,7 @@ export function ProductGuideArticlePage({ article }: ProductGuideArticlePageProp
   return (
     <>
       <ArticleHeader
+        headingId="article-title"
         title={article.title}
         description={article.description}
         breadcrumbs={[
@@ -54,7 +55,7 @@ export function ProductGuideArticlePage({ article }: ProductGuideArticlePageProp
         }
       />
 
-      <Container size="narrow">
+      <Container size="narrow" as="article" aria-labelledby="article-title">
         <QuickAnswerBox
           variant="neutral"
           label="Quick recommendation"

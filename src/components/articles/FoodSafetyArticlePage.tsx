@@ -34,6 +34,7 @@ export function FoodSafetyArticlePage({ article }: FoodSafetyArticlePageProps) {
   return (
     <>
       <ArticleHeader
+        headingId="article-title"
         title={article.title}
         description={article.description}
         breadcrumbs={[
@@ -58,7 +59,7 @@ export function FoodSafetyArticlePage({ article }: FoodSafetyArticlePageProps) {
         }
       />
 
-      <Container size="narrow">
+      <Container size="narrow" as="article" aria-labelledby="article-title">
         <QuickAnswerBox
           variant={safetyLevelToQuickAnswerVariant(article.safetyLevel)}
           label={getSafetyQuickAnswerLabel(article.safetyLevel)}

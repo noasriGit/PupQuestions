@@ -1,4 +1,6 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { useId, type ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
 
@@ -13,6 +15,8 @@ export function DisclaimerBox({
   children,
   className,
 }: DisclaimerBoxProps) {
+  const titleId = useId();
+
   return (
     <aside
       className={cn(
@@ -20,6 +24,7 @@ export function DisclaimerBox({
         className,
       )}
       role="note"
+      aria-labelledby={titleId}
     >
       <div className="flex gap-3">
         <span
@@ -29,7 +34,7 @@ export function DisclaimerBox({
           !
         </span>
         <div>
-          <p className="text-sm font-semibold text-amber-900">{title}</p>
+          <p id={titleId} className="text-sm font-semibold text-amber-900">{title}</p>
           <div className="mt-1.5 text-sm leading-relaxed text-amber-950/80">
             {children}
           </div>

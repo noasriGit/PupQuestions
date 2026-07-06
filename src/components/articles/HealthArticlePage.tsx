@@ -35,6 +35,7 @@ export function HealthArticlePage({ article }: HealthArticlePageProps) {
   return (
     <>
       <ArticleHeader
+        headingId="article-title"
         title={article.title}
         description={article.description}
         breadcrumbs={[
@@ -59,7 +60,7 @@ export function HealthArticlePage({ article }: HealthArticlePageProps) {
         }
       />
 
-      <Container size="narrow">
+      <Container size="narrow" as="article" aria-labelledby="article-title">
         <DisclaimerBox title="Medical disclaimer" className="mt-8">
           PupQuestions provides general educational information only. It is not a
           substitute for professional veterinary advice, diagnosis, or treatment.

@@ -1,5 +1,10 @@
 export type TrustPage = {
-  path: `/about` | `/contact` | `/editorial-standards` | `/privacy`;
+  path:
+    | `/about`
+    | `/contact`
+    | `/editorial-standards`
+    | `/privacy`
+    | `/accessibility`;
   title: string;
   description: string;
 };
@@ -28,6 +33,12 @@ export const trustPages: TrustPage[] = [
     title: "Privacy Policy",
     description:
       "A straightforward overview of what information PupQuestions may collect and how the site handles privacy.",
+  },
+  {
+    path: "/accessibility",
+    title: "Accessibility",
+    description:
+      "How PupQuestions is working to improve website accessibility and how to report barriers you encounter.",
   },
 ];
 

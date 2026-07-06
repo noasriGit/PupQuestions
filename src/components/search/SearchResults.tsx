@@ -21,7 +21,10 @@ export function SearchResults({ query, category, results }: SearchResultsProps) 
 
   if (!trimmedQuery && !category) {
     return (
-      <div className="rounded-2xl border border-dashed border-stone-300 bg-white px-6 py-10 text-center">
+      <div
+        className="rounded-2xl border border-dashed border-stone-300 bg-white px-6 py-10 text-center"
+        aria-live="polite"
+      >
         <h2 className="text-lg font-semibold text-stone-900">
           Search published dog guides
         </h2>
@@ -35,7 +38,10 @@ export function SearchResults({ query, category, results }: SearchResultsProps) 
 
   if (results.length === 0) {
     return (
-      <div className="rounded-2xl border border-stone-200 bg-white px-6 py-10 text-center">
+      <div
+        className="rounded-2xl border border-stone-200 bg-white px-6 py-10 text-center"
+        aria-live="polite"
+      >
         <h2 className="text-lg font-semibold text-stone-900">No results found</h2>
         <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-stone-600">
           {trimmedQuery ? (
@@ -87,7 +93,7 @@ export function SearchResults({ query, category, results }: SearchResultsProps) 
   }
 
   return (
-    <div>
+    <div aria-live="polite" aria-atomic="true">
       <p className="text-sm text-stone-600">
         {results.length} {results.length === 1 ? "result" : "results"}
         {trimmedQuery ? (

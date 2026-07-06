@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 
 import { cn } from "@/lib/cn";
 import type { SiteSection } from "@/types/site";
@@ -11,9 +11,35 @@ type MobileNavProps = {
   siteName: string;
 };
 
+function getFocusableElements(container: HTMLElement): HTMLElement[] {
+  return Array.from(
+    container.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    ),
+  ).filter((element) => !element.hasAttribute("disabled") && element.offsetParent !== null);
+}
+
 export function MobileNav({ sections, siteName }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
   const menuId = useId();
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLElement>(null);
+
+  function closeMenu(returnFocus = true) {
+    setIsOpen(false);
+    if (returnFocus) {
+      menuButtonRef.current?.focus();
+    }
+  }
+
+  function toggleMenu() {
+    setIsOpen((open) => {
+      if (open) {
+        queueMicrotask(() => menuButtonRef.current?.focus());
+      }
+      return !open;
+    });
+  }
 
   useEffect(() => {
     if (!isOpen) {
@@ -22,15 +48,43 @@ export function MobileNav({ sections, siteName }: MobileNavProps) {
 
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setIsOpen(false);
+        closeMenu();
+      }
+    };
+
+    const handleTabTrap = (event: KeyboardEvent) => {
+      if (event.key !== "Tab" || !menuRef.current) {
+        return;
+      }
+
+      const focusable = getFocusableElements(menuRef.current);
+
+      if (focusable.length === 0) {
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
       }
     };
 
     document.addEventListener("keydown", handleEscape);
+    document.addEventListener("keydown", handleTabTrap);
     document.body.style.overflow = "hidden";
+
+    const firstLink = menuRef.current?.querySelector<HTMLElement>("a[href]");
+    firstLink?.focus();
 
     return () => {
       document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener("keydown", handleTabTrap);
       document.body.style.overflow = "";
     };
   }, [isOpen]);
@@ -38,12 +92,14 @@ export function MobileNav({ sections, siteName }: MobileNavProps) {
   return (
     <div className="md:hidden">
       <button
+        ref={menuButtonRef}
         type="button"
         className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-stone-200 bg-white text-stone-700 transition hover:border-amber-300 hover:text-amber-800"
         aria-expanded={isOpen}
         aria-controls={menuId}
+        aria-haspopup="true"
         aria-label={isOpen ? "Close menu" : "Open menu"}
-        onClick={() => setIsOpen((open) => !open)}
+        onClick={toggleMenu}
       >
         {isOpen ? (
           <svg
@@ -77,10 +133,11 @@ export function MobileNav({ sections, siteName }: MobileNavProps) {
           <button
             type="button"
             className="fixed inset-0 z-40 bg-stone-900/20"
-            aria-label="Close menu overlay"
-            onClick={() => setIsOpen(false)}
+            aria-label="Close menu"
+            onClick={() => closeMenu()}
           />
           <nav
+            ref={menuRef}
             id={menuId}
             aria-label="Mobile navigation"
             className="fixed inset-x-4 top-[4.5rem] z-50 max-h-[calc(100vh-6rem)] overflow-y-auto rounded-xl border border-stone-200 bg-white p-4 shadow-lg"
@@ -95,7 +152,7 @@ export function MobileNav({ sections, siteName }: MobileNavProps) {
                   className={cn(
                     "block rounded-lg px-3 py-2.5 text-sm font-medium text-stone-700 transition hover:bg-amber-50 hover:text-amber-800",
                   )}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => closeMenu()}
                 >
                   Home
                 </Link>
@@ -105,7 +162,7 @@ export function MobileNav({ sections, siteName }: MobileNavProps) {
                   <Link
                     href={section.href}
                     className="block rounded-lg px-3 py-2.5 text-sm font-medium text-stone-700 transition hover:bg-amber-50 hover:text-amber-800"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => closeMenu()}
                   >
                     {section.title}
                   </Link>

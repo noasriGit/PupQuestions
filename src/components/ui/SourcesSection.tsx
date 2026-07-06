@@ -34,6 +34,7 @@ export function SourcesSection({
                 className="font-medium text-amber-700 hover:text-amber-800 underline underline-offset-2"
               >
                 {source.title}
+                <span className="sr-only"> (opens in new tab)</span>
               </a>
             ) : (
               <span className="font-medium text-stone-800">{source.title}</span>

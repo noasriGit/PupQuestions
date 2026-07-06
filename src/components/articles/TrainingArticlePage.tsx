@@ -29,6 +29,7 @@ export function TrainingArticlePage({ article }: TrainingArticlePageProps) {
   return (
     <>
       <ArticleHeader
+        headingId="article-title"
         title={article.title}
         description={article.description}
         breadcrumbs={[
@@ -53,7 +54,7 @@ export function TrainingArticlePage({ article }: TrainingArticlePageProps) {
         }
       />
 
-      <Container size="narrow">
+      <Container size="narrow" as="article" aria-labelledby="article-title">
         <QuickAnswerBox variant="neutral" label="Training summary" className="mt-8">
           {article.quickAnswer}
         </QuickAnswerBox>

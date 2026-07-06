@@ -36,6 +36,7 @@ export function CategoryHubPage({ category }: CategoryHubPageProps) {
     <>
       <HubStructuredData category={category} />
       <ArticleHeader
+        headingId="hub-title"
         title={section.title}
         description={hub.intro}
         breadcrumbs={[
@@ -55,7 +56,7 @@ export function CategoryHubPage({ category }: CategoryHubPageProps) {
         }
       />
 
-      <Container className="py-10 sm:py-12">
+      <Container as="article" aria-labelledby="hub-title" className="py-10 sm:py-12">
         <p className="mb-10 max-w-3xl text-base leading-relaxed text-stone-600 sm:text-lg">
           {hub.overview}
         </p>

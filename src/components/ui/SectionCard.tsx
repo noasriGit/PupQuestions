@@ -19,7 +19,11 @@ export function SectionCard({
   className,
 }: SectionCardProps) {
   return (
-    <Link href={href} className={cn("group block h-full", className)}>
+    <Link
+      href={href}
+      className={cn("group block h-full", className)}
+      aria-label={`${title}: ${description}`}
+    >
       <Card
         padding="md"
         className="flex h-full flex-col transition hover:border-amber-300 hover:shadow-md"
@@ -38,7 +42,7 @@ export function SectionCard({
         <p className="mt-2 flex-1 text-sm leading-relaxed text-stone-600">
           {description}
         </p>
-        <span className="mt-4 text-sm font-medium text-amber-700 group-hover:text-amber-800">
+        <span className="mt-4 text-sm font-medium text-amber-700 group-hover:text-amber-800" aria-hidden="true">
           Explore section →
         </span>
       </Card>

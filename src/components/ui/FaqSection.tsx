@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useRef, useState, type KeyboardEvent } from "react";
 
 import { cn } from "@/lib/cn";
 
@@ -21,11 +21,46 @@ export function FaqSection({
   className,
 }: FaqSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const sectionId = useId();
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  function focusButton(index: number) {
+    buttonRefs.current[index]?.focus();
+  }
+
+  function handleButtonKeyDown(event: KeyboardEvent<HTMLButtonElement>, index: number) {
+    const lastIndex = items.length - 1;
+
+    switch (event.key) {
+      case "ArrowDown":
+        event.preventDefault();
+        focusButton(index < lastIndex ? index + 1 : 0);
+        break;
+      case "ArrowUp":
+        event.preventDefault();
+        focusButton(index > 0 ? index - 1 : lastIndex);
+        break;
+      case "Home":
+        event.preventDefault();
+        focusButton(0);
+        break;
+      case "End":
+        event.preventDefault();
+        focusButton(lastIndex);
+        break;
+      case "Escape":
+        event.preventDefault();
+        setOpenIndex(null);
+        break;
+      default:
+        break;
+    }
+  }
 
   return (
-    <section className={className} aria-labelledby="faq-section-heading">
+    <section className={className} aria-labelledby={sectionId}>
       <h2
-        id="faq-section-heading"
+        id={sectionId}
         className="text-2xl font-bold tracking-tight text-stone-900"
       >
         {title}
@@ -33,19 +68,23 @@ export function FaqSection({
       <ul className="mt-6 divide-y divide-stone-200 rounded-xl border border-stone-200 bg-white">
         {items.map((item, index) => {
           const isOpen = openIndex === index;
-          const panelId = `faq-panel-${index}`;
-          const buttonId = `faq-button-${index}`;
+          const panelId = `${sectionId}-panel-${index}`;
+          const buttonId = `${sectionId}-button-${index}`;
 
           return (
             <li key={item.question}>
               <h3>
                 <button
+                  ref={(element) => {
+                    buttonRefs.current[index] = element;
+                  }}
                   id={buttonId}
                   type="button"
                   className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-stone-900 transition hover:bg-stone-50 sm:px-6"
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                   onClick={() => setOpenIndex(isOpen ? null : index)}
+                  onKeyDown={(event) => handleButtonKeyDown(event, index)}
                 >
                   <span>{item.question}</span>
                   <span

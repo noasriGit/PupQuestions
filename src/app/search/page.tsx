@@ -62,6 +62,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
       <Container className="py-12 sm:py-16">
         <div className="mx-auto max-w-3xl text-center">
           <SectionHeading
+            as="h1"
             eyebrow="Search"
             title="Find answers fast"
             description="Search published PupQuestions guides by question, topic, tag, or keyword."

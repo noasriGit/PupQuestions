@@ -59,6 +59,7 @@ function GenericArticlePage({ article }: ArticlePageProps) {
   return (
     <>
       <ArticleHeader
+        headingId="article-title"
         title={article.title}
         description={article.description}
         breadcrumbs={[
@@ -81,7 +82,7 @@ function GenericArticlePage({ article }: ArticlePageProps) {
         }
       />
 
-      <Container size="narrow">
+      <Container size="narrow" as="article" aria-labelledby="article-title">
         <QuickAnswerBox
           variant="neutral"
           label="Quick answer"

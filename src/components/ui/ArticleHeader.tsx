@@ -10,6 +10,7 @@ type ArticleHeaderProps = {
   breadcrumbs?: BreadcrumbItem[];
   meta?: ReactNode;
   className?: string;
+  headingId?: string;
 };
 
 export function ArticleHeader({
@@ -18,6 +19,7 @@ export function ArticleHeader({
   breadcrumbs,
   meta,
   className,
+  headingId,
 }: ArticleHeaderProps) {
   return (
     <header className={cn("border-b border-stone-200 bg-white", className)}>
@@ -25,7 +27,10 @@ export function ArticleHeader({
         {breadcrumbs ? (
           <Breadcrumb items={breadcrumbs} className="mb-4" />
         ) : null}
-        <h1 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
+        <h1
+          id={headingId}
+          className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl lg:text-[2.5rem] lg:leading-tight"
+        >
           {title}
         </h1>
         {description ? (
