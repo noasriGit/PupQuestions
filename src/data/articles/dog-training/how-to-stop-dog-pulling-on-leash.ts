@@ -6,41 +6,51 @@ export const howToStopDogPullingOnLeash: TrainingArticle = {
   category: "dog-training",
   template: "training",
   subcategory: "Leash manners",
+  trainingTopic: "Loose-leash walking",
   description:
     "Leash pulling is one of the most common training frustrations. Learn practical techniques to teach loose-leash walking using patience, consistency, and positive reinforcement.",
   quickAnswer:
     "Most dogs pull because pulling gets them where they want to go. Teach loose-leash walking by rewarding your dog for staying near you, stopping when the leash tightens, and practicing in low-distraction environments before busy walks.",
   intro:
     "A dog that pulls on every walk can make outings stressful for both of you. The good news: leash manners are teachable skills, not personality traits. Progress comes from clear rules, short practice sessions, and rewarding the behavior you want.",
-  sections: [
-    {
-      heading: "Why dogs pull on leash",
-      paragraphs: [
-        "Dogs pull because the world is exciting and forward motion is self-rewarding. If pulling has consistently gotten your dog to the park, another dog, or a interesting smell, the behavior has been reinforced many times.",
-        "Punishment-heavy approaches often increase frustration or anxiety. Positive reinforcement — rewarding slack in the leash and attention to you — tends to produce more reliable long-term results.",
-      ],
-    },
-    {
-      heading: "Core techniques to try",
-      paragraphs: [
-        "Use a front-clip harness or well-fitted harness if your dog is strong, but remember that equipment alone does not replace training. Start in a quiet area with high-value treats.",
-        "When your dog pulls, stop walking. Wait for slack in the leash or for your dog to orient back toward you, then mark and reward before moving again. This teaches that pulling ends forward progress.",
-      ],
-      listItems: [
-        "Reward frequently when the leash is loose at your side",
-        "Change direction if your dog fixates on distractions",
-        "Keep early sessions short to avoid overstimulation",
-        "Use a consistent cue such as \"let's go\" when resuming walking",
-      ],
-    },
-    {
-      heading: "Building consistency over time",
-      paragraphs: [
-        "Expect setbacks on exciting walks. Practice near home first, then gradually increase distractions. Everyone who walks the dog should follow the same rules so pulling is not sometimes rewarded.",
-        "If pulling is sudden, extreme, or paired with reactivity toward people or dogs, consider working with a certified positive-reinforcement trainer for a tailored plan.",
-      ],
-    },
-  ],
+  sections: [],
+  whyItHappens: {
+    paragraphs: [
+      "Dogs pull because the world is exciting and forward motion is self-rewarding. If pulling has consistently gotten your dog to the park, another dog, or an interesting smell, the behavior has been reinforced many times.",
+      "Punishment-heavy approaches often increase frustration or anxiety. Positive reinforcement — rewarding slack in the leash and attention to you — tends to produce more reliable long-term results.",
+    ],
+  },
+  trainingSteps: {
+    paragraphs: [
+      "Start in a quiet area with high-value treats. When your dog pulls, stop walking. Wait for slack in the leash or for your dog to orient back toward you, then mark and reward before moving again.",
+      "Build duration gradually. Early sessions can be short — even five minutes of focused practice helps when done consistently.",
+    ],
+    listItems: [
+      "Reward frequently when the leash is loose at your side",
+      "Stop forward motion the moment the leash tightens",
+      "Change direction if your dog fixates on distractions",
+      "Use a consistent cue such as \"let's go\" when resuming walking",
+      "Increase distractions slowly after success at home or in a quiet area",
+    ],
+  },
+  commonMistakes: {
+    paragraphs: [
+      "Letting your dog pull sometimes — to sniff, greet another dog, or hurry to the park — teaches that pulling still works. Everyone who walks the dog should follow the same rules.",
+      "Relying on equipment alone without training, using long unstructured walks before basics are learned, or punishing with leash jerks can slow progress or harm trust.",
+    ],
+  },
+  whenToGetProfessionalHelp: {
+    paragraphs: [
+      "Consider a certified positive-reinforcement trainer if pulling is sudden, extreme, or paired with reactivity toward people or dogs, or if you feel unsafe on walks.",
+      "A vet visit is appropriate if pulling appears linked to pain, vision changes, or anxiety that worsened recently.",
+    ],
+  },
+  toolsAndSetup: {
+    paragraphs: [
+      "A front-clip harness or well-fitted harness can reduce strain for strong pullers, but it does not replace training. Avoid choke chains and prong collars for routine walking.",
+      "Choose treats your dog values in distracting environments. Keep sessions short to avoid overstimulation.",
+    ],
+  },
   faqs: [
     {
       question: "Will a choke or prong collar fix pulling?",
@@ -60,14 +70,14 @@ export const howToStopDogPullingOnLeash: TrainingArticle = {
   ],
   relatedQuestions: [
     {
+      title: "How to crate train a puppy",
+      slug: "how-to-crate-train-a-puppy",
+      category: "dog-training",
+    },
+    {
       title: "Why do dogs eat grass?",
       slug: "why-do-dogs-eat-grass",
       category: "dog-behavior",
-    },
-    {
-      title: "Best family dogs",
-      slug: "best-family-dogs",
-      category: "dog-breeds",
     },
   ],
   tags: ["leash", "walking", "pulling", "obedience"],
@@ -76,5 +86,6 @@ export const howToStopDogPullingOnLeash: TrainingArticle = {
   lastUpdated: "2026-07-06",
   readingTime: 5,
   status: "published",
-  editorialNote: "General training guidance. For aggression or severe reactivity, consult a qualified professional trainer.",
+  editorialNote:
+    "General training guidance. For aggression or severe reactivity, consult a qualified professional trainer.",
 };

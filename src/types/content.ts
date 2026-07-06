@@ -81,6 +81,38 @@ export type HealthContentBlock = {
   listItems?: string[];
 };
 
+/** Structured content block used in behavior, training, breed, and product templates. */
+export type ArticleContentBlock = {
+  paragraphs: string[];
+  listItems?: string[];
+};
+
+/** Normal vs concerning comparison used in behavior template sections. */
+export type NormalVsConcerningBlock = {
+  normal: ArticleContentBlock;
+  concerning: ArticleContentBlock;
+};
+
+/** Ranked or grouped breed entry for breed/list articles. */
+export type BreedEntry = {
+  name: string;
+  rank?: number;
+  group?: string;
+  summary: string;
+  pros?: string[];
+  cons?: string[];
+  bestFor?: string[];
+};
+
+/** Product/category placeholder entry for product guide articles. */
+export type ProductEntry = {
+  name: string;
+  category?: string;
+  summary: string;
+  bestFor?: string[];
+  watchFor?: string[];
+};
+
 type ArticleCore = {
   slug: string;
   title: string;
@@ -139,21 +171,43 @@ export type HealthArticle = ArticleCore & {
 export type BehaviorArticle = ArticleCore & {
   template: "behavior";
   category: "dog-behavior";
+  questionTopic: string;
+  overview: ArticleContentBlock;
+  commonReasons: ArticleContentBlock;
+  normalVsConcerning: NormalVsConcerningBlock;
+  whatOwnersCanDo: ArticleContentBlock;
+  whenToCallVetOrTrainer: ArticleContentBlock;
 };
 
 export type TrainingArticle = ArticleCore & {
   template: "training";
   category: "dog-training";
+  trainingTopic: string;
+  whyItHappens: ArticleContentBlock;
+  trainingSteps: ArticleContentBlock;
+  commonMistakes: ArticleContentBlock;
+  whenToGetProfessionalHelp: ArticleContentBlock;
+  toolsAndSetup?: ArticleContentBlock;
 };
 
 export type BreedListArticle = ArticleCore & {
   template: "breed-list";
   category: "dog-breeds";
+  listTopic: string;
+  selectionCriteria: ArticleContentBlock;
+  breedEntries: BreedEntry[];
+  importantCaveats: ArticleContentBlock;
 };
 
 export type ProductGuideArticle = ArticleCore & {
   template: "product-guide";
   category: "dog-products";
+  productCategory: string;
+  whatToLookFor: ArticleContentBlock;
+  productEntries?: ProductEntry[];
+  safetyConsiderations: ArticleContentBlock;
+  buyingGuide: ArticleContentBlock;
+  mistakesToAvoid: ArticleContentBlock;
 };
 
 export type PuppyCareArticle = ArticleCore & {

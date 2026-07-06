@@ -6,35 +6,61 @@ export const whyDoDogsEatGrass: BehaviorArticle = {
   category: "dog-behavior",
   template: "behavior",
   subcategory: "Eating habits",
+  questionTopic: "Why dogs eat grass",
   description:
     "Grass eating is common in dogs and usually harmless. Explore possible reasons dogs nibble on lawns and when the habit may signal a problem worth discussing with your vet.",
   quickAnswer:
     "Many dogs eat grass occasionally, and experts are not fully agreed on why. Common theories include boredom, taste preference, or an attempt to soothe an upset stomach — but grass eating alone is usually not an emergency unless it leads to frequent vomiting or your lawn is treated with chemicals.",
   intro:
     "If your dog grazes on the lawn like a small lawn mower, you are not alone. Grass eating is one of the most common behavior questions dog owners ask. In most cases it is normal, but context matters — especially if vomiting increases or your yard uses pesticides.",
-  sections: [
-    {
-      heading: "Is grass eating normal for dogs?",
+  sections: [],
+  overview: {
+    paragraphs: [
+      "Studies and surveys suggest a large percentage of dogs eat plant material at some point. Some dogs nibble occasionally; others seek out grass on walks. For many dogs, the behavior appears self-limiting and does not cause harm.",
+      "Occasional grass eating with no other symptoms is generally considered normal exploratory or instinctive behavior rather than a sign of a serious problem on its own.",
+    ],
+  },
+  commonReasons: {
+    paragraphs: [
+      "Dogs may eat grass because they enjoy the texture or taste, because they are bored, or because they have learned it gets attention. Some owners notice grass eating before vomiting, though it is unclear whether dogs eat grass to induce vomiting or vomit because they ate grass.",
+      "Dietary gaps are sometimes suggested as a cause, but there is limited evidence that grass eating reliably signals a nutritional deficiency. If you have concerns about your dog's diet, ask your veterinarian rather than adding supplements on your own.",
+    ],
+  },
+  normalVsConcerning: {
+    normal: {
       paragraphs: [
-        "Studies and surveys suggest a large percentage of dogs eat plant material at some point. Some dogs nibble occasionally; others seek out grass on walks. For many dogs, the behavior appears self-limiting and does not cause harm.",
-        "Occasional grass eating with no other symptoms is generally considered normal exploratory or instinctive behavior rather than a sign of a serious problem on its own.",
+        "Occasional nibbling on clean, untreated grass with no other symptoms is usually nothing to worry about.",
+      ],
+      listItems: [
+        "Your dog eats a small amount and continues acting normally",
+        "Grass eating happens now and then, not constantly",
+        "No repeated vomiting, diarrhea, or weight loss",
       ],
     },
-    {
-      heading: "Possible reasons dogs eat grass",
+    concerning: {
       paragraphs: [
-        "Dogs may eat grass because they enjoy the texture or taste, because they are bored, or because they have learned it gets attention. Some owners notice grass eating before vomiting, though it is unclear whether dogs eat grass to induce vomiting or vomit because they ate grass.",
-        "Dietary gaps are sometimes suggested as a cause, but there is limited evidence that grass eating reliably signals a nutritional deficiency. If you have concerns about your dog's diet, ask your veterinarian rather than adding supplements on your own.",
+        "Grass eating paired with other symptoms or compulsive behavior may warrant a vet visit.",
+      ],
+      listItems: [
+        "Frequent or frantic grass eating followed by repeated vomiting",
+        "Weight loss, appetite changes, or low energy",
+        "Grass treated with herbicides, pesticides, or fertilizer",
+        "Signs of abdominal pain or distress after eating grass",
       ],
     },
-    {
-      heading: "When to talk to your veterinarian",
-      paragraphs: [
-        "Mention grass eating to your vet if it becomes frequent, compulsive, or is paired with repeated vomiting, weight loss, diarrhea, or changes in appetite or energy.",
-        "Avoid letting your dog eat grass treated with herbicides, pesticides, or fertilizer. If your yard or park uses chemicals, keep your dog on leash in untreated areas when possible.",
-      ],
-    },
-  ],
+  },
+  whatOwnersCanDo: {
+    paragraphs: [
+      "If the behavior is occasional and your lawn is untreated, you may not need to intervene. Redirect your dog if grass eating is excessive or if chemicals are present on the lawn.",
+      "Offer mental enrichment — walks, sniffing time, puzzle toys — if boredom may be a factor. Keep your dog on leash in treated areas when possible.",
+    ],
+  },
+  whenToCallVetOrTrainer: {
+    paragraphs: [
+      "Contact your veterinarian if grass eating becomes frequent, compulsive, or is paired with repeated vomiting, weight loss, diarrhea, or changes in appetite or energy.",
+      "A trainer may help if the behavior seems attention-seeking and you want structured redirection strategies, but health concerns should be ruled out with your vet first.",
+    ],
+  },
   faqs: [
     {
       question: "Does grass eating mean my dog is sick?",
@@ -59,9 +85,9 @@ export const whyDoDogsEatGrass: BehaviorArticle = {
       category: "dog-health",
     },
     {
-      title: "Can dogs eat blueberries?",
-      slug: "blueberries",
-      category: "can-dogs-eat",
+      title: "Do dogs dream?",
+      slug: "do-dogs-dream",
+      category: "dog-behavior",
     },
   ],
   tags: ["grass", "eating", "behavior", "digestion"],

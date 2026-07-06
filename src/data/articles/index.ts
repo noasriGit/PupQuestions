@@ -1,12 +1,16 @@
 import { blueberries } from "@/data/articles/can-dogs-eat/blueberries";
 import { peanutButter } from "@/data/articles/can-dogs-eat/peanut-butter";
 import { watermelon } from "@/data/articles/can-dogs-eat/watermelon";
+import { bestApartmentDogs } from "@/data/articles/dog-breeds/best-apartment-dogs";
 import { bestFamilyDogs } from "@/data/articles/dog-breeds/best-family-dogs";
+import { doDogsDream } from "@/data/articles/dog-behavior/do-dogs-dream";
 import { whyDoDogsEatGrass } from "@/data/articles/dog-behavior/why-do-dogs-eat-grass";
 import { canDogsTakeBenadryl } from "@/data/articles/dog-health/can-dogs-take-benadryl";
 import { whyDoesMyDogHaveDiarrhea } from "@/data/articles/dog-health/why-does-my-dog-have-diarrhea";
 import { whyIsMyDogThrowingUp } from "@/data/articles/dog-health/why-is-my-dog-throwing-up";
+import { bestDogBowls } from "@/data/articles/dog-products/best-dog-bowls";
 import { bestDogCrates } from "@/data/articles/dog-products/best-dog-crates";
+import { howToCrateTrainAPuppy } from "@/data/articles/dog-training/how-to-crate-train-a-puppy";
 import { howToStopDogPullingOnLeash } from "@/data/articles/dog-training/how-to-stop-dog-pulling-on-leash";
 import type { Article, ContentCategory } from "@/types/content";
 
@@ -22,9 +26,13 @@ export const articles: Article[] = [
   whyDoesMyDogHaveDiarrhea,
   canDogsTakeBenadryl,
   whyDoDogsEatGrass,
+  doDogsDream,
   howToStopDogPullingOnLeash,
+  howToCrateTrainAPuppy,
   bestFamilyDogs,
+  bestApartmentDogs,
   bestDogCrates,
+  bestDogBowls,
 ];
 
 export function getAllArticles(): Article[] {

@@ -10,10 +10,14 @@ import type { RelatedQuestion } from "@/components/ui/RelatedQuestions";
 import type {
   Article,
   ArticleRelatedQuestion,
+  BehaviorArticle,
+  BreedListArticle,
   ContentCategory,
   FoodSafetyArticle,
   HealthArticle,
+  ProductGuideArticle,
   SafetyLevel,
+  TrainingArticle,
 } from "@/types/content";
 
 export type QuickAnswerVariant = "neutral" | "safe" | "caution" | "unsafe";
@@ -68,6 +72,24 @@ export function isFoodSafetyArticle(
   article: Article,
 ): article is FoodSafetyArticle {
   return article.template === "food-safety";
+}
+
+export function isBehaviorArticle(article: Article): article is BehaviorArticle {
+  return article.template === "behavior";
+}
+
+export function isTrainingArticle(article: Article): article is TrainingArticle {
+  return article.template === "training";
+}
+
+export function isBreedListArticle(article: Article): article is BreedListArticle {
+  return article.template === "breed-list";
+}
+
+export function isProductGuideArticle(
+  article: Article,
+): article is ProductGuideArticle {
+  return article.template === "product-guide";
 }
 
 /** @deprecated Use safetyLevelToQuickAnswerVariant from @/lib/food-safety */

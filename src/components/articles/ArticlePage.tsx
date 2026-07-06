@@ -1,5 +1,9 @@
+import { BehaviorArticlePage } from "@/components/articles/BehaviorArticlePage";
+import { BreedListArticlePage } from "@/components/articles/BreedListArticlePage";
 import { FoodSafetyArticlePage } from "@/components/articles/FoodSafetyArticlePage";
 import { HealthArticlePage } from "@/components/articles/HealthArticlePage";
+import { ProductGuideArticlePage } from "@/components/articles/ProductGuideArticlePage";
+import { TrainingArticlePage } from "@/components/articles/TrainingArticlePage";
 import { ArticleBody } from "@/components/ui/ArticleBody";
 import { ArticleHeader } from "@/components/ui/ArticleHeader";
 import { Container } from "@/components/ui/Container";
@@ -13,8 +17,12 @@ import {
   formatLastUpdated,
   formatReadingTime,
   getArticlePath,
+  isBehaviorArticle,
+  isBreedListArticle,
   isFoodSafetyArticle,
   isHealthArticle,
+  isProductGuideArticle,
+  isTrainingArticle,
   resolveRelatedQuestions,
 } from "@/lib/articles";
 import type { Article, ArticleSection } from "@/types/content";
@@ -134,6 +142,22 @@ export function ArticlePage({ article }: ArticlePageProps) {
 
   if (isHealthArticle(article)) {
     return <HealthArticlePage article={article} />;
+  }
+
+  if (isBehaviorArticle(article)) {
+    return <BehaviorArticlePage article={article} />;
+  }
+
+  if (isTrainingArticle(article)) {
+    return <TrainingArticlePage article={article} />;
+  }
+
+  if (isBreedListArticle(article)) {
+    return <BreedListArticlePage article={article} />;
+  }
+
+  if (isProductGuideArticle(article)) {
+    return <ProductGuideArticlePage article={article} />;
   }
 
   return <GenericArticlePage article={article} />;

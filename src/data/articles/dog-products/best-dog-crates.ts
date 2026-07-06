@@ -6,41 +6,79 @@ export const bestDogCrates: ProductGuideArticle = {
   category: "dog-products",
   template: "product-guide",
   subcategory: "Crates & confinement",
+  productCategory: "Dog crates",
   description:
     "A well-chosen crate can support house training, travel, and safe rest time. Learn how to pick the right size, style, and setup without turning the crate into a punishment.",
   quickAnswer:
     "Choose a crate large enough for your dog to stand, turn around, and lie down comfortably — but not so large that a puppy may use one corner as a bathroom. Wire, plastic, and furniture-style crates each suit different needs; prioritize safety, ventilation, and positive crate training.",
   intro:
     "Crates are tools, not cages. When introduced gradually with positive associations, a crate can give your dog a predictable place to rest and keep them safe when you cannot supervise. The \"best\" crate depends on your dog's size, chewing habits, and how you plan to use it.",
-  sections: [
+  sections: [],
+  whatToLookFor: {
+    paragraphs: [
+      "Prioritize sturdy construction, secure latches, and good ventilation. The crate should fit your dog's current size with room to stand and turn — use a divider for growing puppies.",
+      "Match the style to your use case: home training, travel, car safety, or a dog who chews through standard crates.",
+    ],
+    listItems: [
+      "Correct size with standing, turning, and lying room",
+      "Secure doors and latches your dog cannot easily open",
+      "Adequate airflow for your climate and coat type",
+      "Easy to clean floor pan or washable surfaces",
+    ],
+  },
+  productEntries: [
     {
-      heading: "Types of dog crates",
-      paragraphs: [
-        "Wire crates offer good airflow and fold for storage — useful for home training and many car setups. Plastic airline-style crates provide more enclosed den-like space and are often required for air travel.",
-        "Heavy-duty metal crates suit strong chewers or escape artists. Furniture-style crates blend into home decor but may offer less ventilation — weigh aesthetics against your dog's needs.",
-      ],
-      listItems: [
-        "Wire crate — ventilated, portable, easy to clean",
-        "Plastic crate — enclosed, travel-friendly",
-        "Heavy-duty crate — for dogs who stress or chew standard crates",
-        "Soft-sided crate — lightweight; best for calm, crate-trained dogs only",
-      ],
+      name: "Wire crate",
+      category: "Home training",
+      summary: "Ventilated, portable, and easy to clean. Folds for storage.",
+      bestFor: ["House training at home", "Dogs who tolerate visibility"],
+      watchFor: ["Strong chewers may bend wires; escape artists may need heavy-duty options"],
     },
     {
-      heading: "Sizing and setup tips",
-      paragraphs: [
-        "Measure your dog from nose to base of tail and from floor to top of head while standing, then add a few inches for comfort. For growing puppies, some owners use a divider panel rather than buying multiple crates.",
-        "Place the crate in a quiet but social area — not isolated in a garage unless necessary. Add a comfortable bed only if your dog will not chew and ingest bedding; many trainers start with a mat or approved chew-safe pad.",
-      ],
+      name: "Plastic airline-style crate",
+      category: "Travel",
+      summary: "More enclosed den-like space. Often required for air travel.",
+      bestFor: ["Car travel", "Dogs who prefer enclosed spaces"],
+      watchFor: ["Less airflow than wire; check airline specs before flying"],
     },
     {
-      heading: "Crate training basics",
-      paragraphs: [
-        "Never use the crate as punishment. Introduce it with treats, meals, and short positive sessions with the door open before gradually closing the door for brief periods.",
-        "Puppies and senior dogs may need more frequent bathroom breaks. A crate should not substitute for exercise, enrichment, or veterinary care when a dog shows distress such as prolonged whining, drooling, or attempts to escape.",
-      ],
+      name: "Heavy-duty metal crate",
+      category: "Strong chewers",
+      summary: "Reinforced construction for dogs who stress or chew standard crates.",
+      bestFor: ["Escape artists", "Anxiety-related chewing when supervised"],
+      watchFor: ["Heavier and more expensive; still requires training, not just hardware"],
+    },
+    {
+      name: "Soft-sided crate",
+      category: "Lightweight option",
+      summary: "Portable and lightweight for calm, already crate-trained dogs.",
+      bestFor: ["Short trips with trained dogs", "Indoor quiet rest"],
+      watchFor: ["Not suitable for chewers, puppies, or unsupervised escape attempts"],
     },
   ],
+  safetyConsiderations: {
+    paragraphs: [
+      "Remove collars and tags before crating to reduce snagging risk. Avoid soft bedding that can be shredded and swallowed until you know your dog's chewing habits.",
+      "Crates should not replace exercise, interaction, or veterinary care. Prolonged distress, drooling, or escape attempts signal a training or welfare issue — not a crate size fix alone.",
+    ],
+  },
+  buyingGuide: {
+    paragraphs: [
+      "Measure your dog from nose to tail base and floor to top of head while standing, then add a few inches. For puppies, choose a crate sized for expected adult weight with a divider panel.",
+      "Place the crate in a quiet but social area. Introduce it with treats and meals before expecting closed-door confinement.",
+    ],
+    listItems: [
+      "Compare foldability if you need storage or travel",
+      "Check door placement for your room layout",
+      "Budget for a mat or approved chew-safe bedding separately",
+    ],
+  },
+  mistakesToAvoid: {
+    paragraphs: [
+      "Using the crate as punishment, leaving a puppy crated too long, or buying an oversized crate for house training can undermine success and create anxiety.",
+      "Assuming a crate alone fixes separation issues or destructive behavior without training and enrichment.",
+    ],
+  },
   faqs: [
     {
       question: "How long can a dog stay in a crate?",
@@ -60,14 +98,14 @@ export const bestDogCrates: ProductGuideArticle = {
   ],
   relatedQuestions: [
     {
-      title: "Best family dogs",
-      slug: "best-family-dogs",
-      category: "dog-breeds",
+      title: "How to crate train a puppy",
+      slug: "how-to-crate-train-a-puppy",
+      category: "dog-training",
     },
     {
-      title: "How to stop a dog from pulling on the leash",
-      slug: "how-to-stop-dog-pulling-on-leash",
-      category: "dog-training",
+      title: "Best dog bowls",
+      slug: "best-dog-bowls",
+      category: "dog-products",
     },
   ],
   tags: ["crate", "products", "training", "puppy"],
