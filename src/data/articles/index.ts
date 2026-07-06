@@ -14,8 +14,16 @@ import { watermelon } from "@/data/articles/can-dogs-eat/watermelon";
 import { bestApartmentDogs } from "@/data/articles/dog-breeds/best-apartment-dogs";
 import { bestFamilyDogs } from "@/data/articles/dog-breeds/best-family-dogs";
 import { doDogsDream } from "@/data/articles/dog-behavior/do-dogs-dream";
+import { doDogsHaveBellyButtons } from "@/data/articles/dog-behavior/do-dogs-have-belly-buttons";
+import { howManyTeethDoDogsHave } from "@/data/articles/dog-behavior/how-many-teeth-do-dogs-have";
+import { whyDoDogsCry } from "@/data/articles/dog-behavior/why-do-dogs-cry";
 import { whyDoDogsEatGrass } from "@/data/articles/dog-behavior/why-do-dogs-eat-grass";
 import { whyDoDogsEatPoop } from "@/data/articles/dog-behavior/why-do-dogs-eat-poop";
+import { whyDoDogsGetHiccups } from "@/data/articles/dog-behavior/why-do-dogs-get-hiccups";
+import { whyDoDogsLickTheirPaws } from "@/data/articles/dog-behavior/why-do-dogs-lick-their-paws";
+import { whyDoDogsSmellLikeFritos } from "@/data/articles/dog-behavior/why-do-dogs-smell-like-fritos";
+import { whyDoDogsSneeze } from "@/data/articles/dog-behavior/why-do-dogs-sneeze";
+import { whyDoDogsSnore } from "@/data/articles/dog-behavior/why-do-dogs-snore";
 import { canDogsTakeBenadryl } from "@/data/articles/dog-health/can-dogs-take-benadryl";
 import { whyDoesMyDogHaveDiarrhea } from "@/data/articles/dog-health/why-does-my-dog-have-diarrhea";
 import { whyIsMyDogThrowingUp } from "@/data/articles/dog-health/why-is-my-dog-throwing-up";
@@ -49,9 +57,17 @@ export const articles: Article[] = [
   whyIsMyDogThrowingUp,
   whyDoesMyDogHaveDiarrhea,
   canDogsTakeBenadryl,
+  doDogsDream,
+  doDogsHaveBellyButtons,
+  howManyTeethDoDogsHave,
+  whyDoDogsCry,
   whyDoDogsEatGrass,
   whyDoDogsEatPoop,
-  doDogsDream,
+  whyDoDogsGetHiccups,
+  whyDoDogsLickTheirPaws,
+  whyDoDogsSmellLikeFritos,
+  whyDoDogsSneeze,
+  whyDoDogsSnore,
   howToStopDogPullingOnLeash,
   howToCrateTrainAPuppy,
   bestFamilyDogs,

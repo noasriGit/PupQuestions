@@ -78,14 +78,14 @@ export const doDogsDream: BehaviorArticle = {
   ],
   relatedQuestions: [
     {
-      title: "Why do dogs eat grass?",
-      slug: "why-do-dogs-eat-grass",
+      title: "Why do dogs snore?",
+      slug: "why-do-dogs-snore",
       category: "dog-behavior",
     },
     {
-      title: "Why is my dog throwing up?",
-      slug: "why-is-my-dog-throwing-up",
-      category: "dog-health",
+      title: "Why do dogs cry?",
+      slug: "why-do-dogs-cry",
+      category: "dog-behavior",
     },
   ],
   tags: ["sleep", "dreams", "behavior", "rem sleep"],

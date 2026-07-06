@@ -183,6 +183,14 @@ const dogBehaviorHub: HubConfig = {
     "why-do-dogs-eat-grass": "eating-odd-things",
     "why-do-dogs-eat-poop": "eating-odd-things",
     "do-dogs-dream": "sleep-dreams",
+    "do-dogs-have-belly-buttons": "body-language",
+    "how-many-teeth-do-dogs-have": "body-language",
+    "why-do-dogs-cry": "emotions-attachment",
+    "why-do-dogs-get-hiccups": "body-language",
+    "why-do-dogs-lick-their-paws": "licking-chewing",
+    "why-do-dogs-smell-like-fritos": "licking-chewing",
+    "why-do-dogs-sneeze": "body-language",
+    "why-do-dogs-snore": "sleep-dreams",
   },
   topicGroups: [
     {
