@@ -1,3 +1,5 @@
+import { useId } from "react";
+
 import {
   ArticleBlockContent,
   ArticleSection,
@@ -14,18 +16,31 @@ export function NormalVsConcerningSection({
   block,
   className,
 }: NormalVsConcerningSectionProps) {
+  const normalTitleId = useId();
+  const concerningTitleId = useId();
+
   return (
     <ArticleSection heading="Normal vs concerning behavior" className={className}>
       <div className="grid gap-5 sm:grid-cols-2">
-        <aside className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-5">
-          <p className="text-sm font-semibold text-emerald-900">Usually normal</p>
-          <div className="mt-2 text-sm leading-relaxed text-emerald-950/90">
+        <aside
+          className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-5"
+          aria-labelledby={normalTitleId}
+        >
+          <p id={normalTitleId} className="text-sm font-semibold text-emerald-900">
+            Usually normal
+          </p>
+          <div className="mt-2 text-sm leading-relaxed text-emerald-950">
             <ArticleBlockContent {...block.normal} />
           </div>
         </aside>
-        <aside className="rounded-xl border border-amber-200 bg-amber-50/60 p-5">
-          <p className="text-sm font-semibold text-amber-900">Worth a closer look</p>
-          <div className="mt-2 text-sm leading-relaxed text-amber-950/90">
+        <aside
+          className="rounded-xl border border-amber-200 bg-amber-50/60 p-5"
+          aria-labelledby={concerningTitleId}
+        >
+          <p id={concerningTitleId} className="text-sm font-semibold text-amber-900">
+            Worth a closer look
+          </p>
+          <div className="mt-2 text-sm leading-relaxed text-amber-950">
             <ArticleBlockContent {...block.concerning} />
           </div>
         </aside>

@@ -35,7 +35,7 @@ export function DisclaimerBox({
         </span>
         <div>
           <p id={titleId} className="text-sm font-semibold text-amber-900">{title}</p>
-          <div className="mt-1.5 text-sm leading-relaxed text-amber-950/80">
+          <div className="mt-1.5 text-sm leading-relaxed text-amber-950">
             {children}
           </div>
         </div>

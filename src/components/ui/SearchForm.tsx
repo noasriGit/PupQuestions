@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { FormEvent, useState } from "react";
+import { FormEvent, useId, useState } from "react";
 
 import { cn } from "@/lib/cn";
 import { buildSearchHref } from "@/lib/search";
@@ -26,6 +26,7 @@ export function SearchForm({
 }: SearchFormProps) {
   const router = useRouter();
   const [query, setQuery] = useState(defaultQuery);
+  const hintId = useId();
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -39,7 +40,7 @@ export function SearchForm({
       </label>
       <div className="relative">
         <span
-          className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-stone-400"
+          className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-stone-500"
           aria-hidden="true"
         >
           <svg
@@ -64,10 +65,11 @@ export function SearchForm({
           placeholder={placeholder}
           enterKeyHint="search"
           autoComplete="off"
+          aria-describedby={showHint ? hintId : undefined}
           className={cn(
             "w-full rounded-xl border border-stone-200 bg-white py-3.5 pl-12 pr-24 text-base text-stone-900 shadow-sm",
-            "placeholder:text-stone-400",
-            "focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-300",
+            "placeholder:text-stone-500",
+            "focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500",
             inputClassName,
           )}
         />
@@ -79,7 +81,7 @@ export function SearchForm({
         </button>
       </div>
       {showHint ? (
-        <p className="mt-2 text-sm text-stone-500">
+        <p id={hintId} className="mt-2 text-sm text-stone-600">
           Search published guides across nutrition, health, behavior, training,
           and more.
         </p>

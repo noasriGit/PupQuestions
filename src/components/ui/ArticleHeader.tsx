@@ -39,7 +39,7 @@ export function ArticleHeader({
           </p>
         ) : null}
         {meta ? (
-          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-stone-500">
+          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-stone-600">
             {meta}
           </div>
         ) : null}

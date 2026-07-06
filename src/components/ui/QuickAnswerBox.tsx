@@ -35,7 +35,7 @@ const variantStyles: Record<
   unsafe: {
     container: "border-red-200 bg-red-50/80",
     label: "text-red-900",
-    icon: "bg-red-100 text-red-700",
+    icon: "bg-red-100 text-red-800",
   },
 };
 

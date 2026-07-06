@@ -36,7 +36,7 @@ export function SearchCategoryFilter({
                 ? "border-amber-300 bg-amber-50 text-amber-900"
                 : "border-stone-200 bg-white text-stone-600 hover:border-amber-200 hover:text-amber-800",
             )}
-            aria-current={!activeCategory ? "true" : undefined}
+            aria-current={!activeCategory ? "page" : undefined}
           >
             All topics
           </Link>
@@ -51,7 +51,7 @@ export function SearchCategoryFilter({
                   ? "border-amber-300 bg-amber-50 text-amber-900"
                   : "border-stone-200 bg-white text-stone-600 hover:border-amber-200 hover:text-amber-800",
               )}
-              aria-current={activeCategory === section.slug ? "true" : undefined}
+              aria-current={activeCategory === section.slug ? "page" : undefined}
             >
               {section.title}
             </Link>

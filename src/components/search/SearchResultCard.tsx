@@ -20,7 +20,7 @@ export function SearchResultCard({ result }: SearchResultCardProps) {
         <p className="mt-2 text-sm leading-relaxed text-stone-600 line-clamp-2">
           {result.description}
         </p>
-        <p className="mt-3 text-xs font-medium uppercase tracking-wide text-stone-500">
+        <p className="mt-3 text-xs font-medium uppercase tracking-wide text-stone-600">
           {result.categoryTitle}
         </p>
       </Card>

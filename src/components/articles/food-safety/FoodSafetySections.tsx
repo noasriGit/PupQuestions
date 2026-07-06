@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useId, type ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
 import { getSafetyStatus } from "@/lib/food-safety";
@@ -79,6 +79,8 @@ type EmergencyNoteProps = {
 };
 
 export function EmergencyNote({ children, className }: EmergencyNoteProps) {
+  const titleId = useId();
+
   return (
     <aside
       className={cn(
@@ -86,15 +88,21 @@ export function EmergencyNote({ children, className }: EmergencyNoteProps) {
         className,
       )}
       role="note"
+      aria-labelledby={titleId}
     >
       <div className="flex gap-3">
         <span
-          className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-100 text-sm font-bold text-red-700"
+          className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-100 text-sm font-bold text-red-800"
           aria-hidden="true"
         >
           !
         </span>
-        <div className="text-sm leading-relaxed text-red-950/90">{children}</div>
+        <div>
+          <p id={titleId} className="text-sm font-semibold text-red-900">
+            Important warning
+          </p>
+          <div className="mt-1.5 text-sm leading-relaxed text-red-950">{children}</div>
+        </div>
       </div>
     </aside>
   );

@@ -35,7 +35,7 @@ export function RelatedQuestions({
                   {question.title}
                 </p>
                 {question.section ? (
-                  <p className="mt-1 text-xs font-medium uppercase tracking-wide text-stone-500">
+                  <p className="mt-1 text-xs font-medium uppercase tracking-wide text-stone-600">
                     {question.section}
                   </p>
                 ) : null}

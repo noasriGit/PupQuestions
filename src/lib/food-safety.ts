@@ -15,14 +15,14 @@ const SAFETY_STATUS: Record<SafetyLevel, SafetyStatusStyle> = {
     label: "Generally safe",
     quickAnswerLabel: "Generally safe",
     variant: "safe",
-    badge: "border-emerald-200 bg-emerald-50 text-emerald-800",
+    badge: "border-emerald-200 bg-emerald-50 text-emerald-900",
     dot: "bg-emerald-500",
   },
   moderation: {
     label: "Safe in moderation",
     quickAnswerLabel: "Safe in moderation",
     variant: "safe",
-    badge: "border-emerald-200 bg-emerald-50 text-emerald-800",
+    badge: "border-emerald-200 bg-emerald-50 text-emerald-900",
     dot: "bg-emerald-500",
   },
   caution: {

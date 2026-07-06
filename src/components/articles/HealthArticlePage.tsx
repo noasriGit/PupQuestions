@@ -68,7 +68,7 @@ export function HealthArticlePage({ article }: HealthArticlePageProps) {
           {article.editorialNote ? (
             <>
               {" "}
-              <span className="mt-2 block text-amber-900/90">
+              <span className="mt-2 block text-amber-950">
                 {article.editorialNote}
               </span>
             </>

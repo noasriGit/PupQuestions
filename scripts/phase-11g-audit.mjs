@@ -165,9 +165,34 @@ for (const [, cat, slug] of popularMatches) {
   }
 }
 
-// Sitemap expected count
+// Sitemap expected count — derive trust pages from registry (keep in sync with src/data/trust-pages.ts)
+const trustPagesPath = join(root, "src/data/trust-pages.ts");
+const trustPagesContent = readFileSync(trustPagesPath, "utf8");
+const trustPagePaths = [
+  ...trustPagesContent.matchAll(/^\s*path:\s*"(\/[^"]+)"/gm),
+].map((match) => match[1]);
+const trustPagesCount = trustPagePaths.length;
+const expectedTrustPagePaths = [
+  "/about",
+  "/contact",
+  "/editorial-standards",
+  "/privacy",
+  "/accessibility",
+];
+
+if (trustPagesCount !== expectedTrustPagePaths.length) {
+  issues.push(
+    `Trust page count mismatch: registry has ${trustPagesCount}, expected ${expectedTrustPagePaths.length}`,
+  );
+}
+
+for (const expectedPath of expectedTrustPagePaths) {
+  if (!trustPagePaths.includes(expectedPath)) {
+    issues.push(`Missing trust page in registry: ${expectedPath}`);
+  }
+}
+
 const sectionsCount = 8;
-const trustPagesCount = 4;
 const expectedIndexableUrls = 1 + sectionsCount + trustPagesCount + indexable.length;
 
 // Search queries to verify (will output article matches from title/slug scan)
@@ -242,7 +267,14 @@ for (const cat of hubCategories) {
   console.log(`  ${cat}: ${indexableByCategory[cat] ?? 0}`);
 }
 console.log("\nExpected indexable URLs:", expectedIndexableUrls);
-console.log("  (1 homepage + 8 hubs + 4 trust pages +", indexable.length, "articles)");
+console.log(
+  "  (1 homepage + 8 hubs +",
+  trustPagesCount,
+  "trust pages +",
+  indexable.length,
+  "articles)",
+);
+console.log("  Trust pages:", trustPagePaths.join(", "));
 
 console.log("\n=== Search query spot-check ===");
 for (const [query, matches] of Object.entries(searchResults)) {

@@ -33,7 +33,7 @@ function BreedDetailList({
 }) {
   return (
     <div>
-      <p className="text-xs font-semibold uppercase tracking-wide text-stone-500">
+      <p className="text-xs font-semibold uppercase tracking-wide text-stone-600">
         {label}
       </p>
       <ul className="mt-1.5 space-y-1 text-sm text-stone-700">
@@ -54,7 +54,7 @@ export function BreedEntryCard({ entry }: BreedEntryCardProps) {
         ) : null}
         <h3 className="text-lg font-semibold text-stone-900">{entry.name}</h3>
         {entry.group ? (
-          <span className="text-xs font-medium text-stone-500">{entry.group}</span>
+          <span className="text-xs font-medium text-stone-600">{entry.group}</span>
         ) : null}
       </div>
       <p className="mt-2 text-sm leading-relaxed text-stone-700">{entry.summary}</p>

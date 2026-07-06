@@ -30,7 +30,7 @@ export function ArticleCard({ article, showMeta = true }: ArticleCardProps) {
           {article.description}
         </p>
         {showMeta ? (
-          <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-stone-500">
+          <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-stone-600">
             <span>{formatReadingTime(article.readingTime)}</span>
             {article.subcategory ? (
               <>

@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useId, type ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
 import { getUrgencyStatus } from "@/lib/health";
@@ -72,6 +72,8 @@ export function EmergencySignsCallout({
   children,
   className,
 }: EmergencySignsCalloutProps) {
+  const titleId = useId();
+
   return (
     <aside
       className={cn(
@@ -79,6 +81,7 @@ export function EmergencySignsCallout({
         className,
       )}
       role="alert"
+      aria-labelledby={titleId}
     >
       <div className="flex gap-3">
         <span
@@ -88,10 +91,10 @@ export function EmergencySignsCallout({
           !
         </span>
         <div>
-          <p className="text-sm font-bold uppercase tracking-wide text-red-900">
+          <p id={titleId} className="text-sm font-bold uppercase tracking-wide text-red-900">
             Emergency warning signs
           </p>
-          <div className="mt-2 text-sm leading-relaxed text-red-950/90">{children}</div>
+          <div className="mt-2 text-sm leading-relaxed text-red-950">{children}</div>
         </div>
       </div>
     </aside>
@@ -107,6 +110,8 @@ export function MedicationSafetyNote({
   children,
   className,
 }: MedicationSafetyNoteProps) {
+  const titleId = useId();
+
   return (
     <aside
       className={cn(
@@ -114,6 +119,7 @@ export function MedicationSafetyNote({
         className,
       )}
       role="note"
+      aria-labelledby={titleId}
     >
       <div className="flex gap-3">
         <span
@@ -123,8 +129,8 @@ export function MedicationSafetyNote({
           Rx
         </span>
         <div>
-          <p className="text-sm font-semibold text-amber-950">Medication safety</p>
-          <div className="mt-1.5 text-sm leading-relaxed text-amber-950/90">
+          <p id={titleId} className="text-sm font-semibold text-amber-950">Medication safety</p>
+          <div className="mt-1.5 text-sm leading-relaxed text-amber-950">
             {children}
           </div>
         </div>

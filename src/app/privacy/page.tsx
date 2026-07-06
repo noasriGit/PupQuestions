@@ -19,7 +19,7 @@ export default function PrivacyPage() {
       description="A simple, honest overview of how PupQuestions handles information."
       path="/privacy"
     >
-      <p className="text-sm text-stone-500">Last updated: July 2026</p>
+      <p className="text-sm text-stone-600">Last updated: July 2026</p>
 
       <h2>Overview</h2>
       <p>

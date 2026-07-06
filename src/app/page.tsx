@@ -68,7 +68,7 @@ export default function HomePage() {
             description="Common questions dog owners search for — answered with clear, practical guides."
           />
           <PopularDogQuestions />
-          <p className="mt-6 text-center text-sm text-stone-500">
+          <p className="mt-6 text-center text-sm text-stone-600">
             Explore more topics in{" "}
             <Link
               href="/dog-health"

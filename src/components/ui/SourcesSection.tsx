@@ -40,7 +40,7 @@ export function SourcesSection({
               <span className="font-medium text-stone-800">{source.title}</span>
             )}
             {source.organization ? (
-              <span className="text-stone-500"> — {source.organization}</span>
+              <span className="text-stone-600"> — {source.organization}</span>
             ) : null}
           </li>
         ))}

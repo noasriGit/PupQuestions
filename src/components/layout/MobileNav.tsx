@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
 
+import { NavLink } from "@/components/ui/NavLink";
 import { cn } from "@/lib/cn";
 import type { SiteSection } from "@/types/site";
 
@@ -10,6 +10,9 @@ type MobileNavProps = {
   sections: SiteSection[];
   siteName: string;
 };
+
+const navActiveClassName =
+  "bg-amber-50 font-semibold text-amber-900 underline decoration-amber-600 decoration-2 underline-offset-4";
 
 function getFocusableElements(container: HTMLElement): HTMLElement[] {
   return Array.from(
@@ -142,34 +145,37 @@ export function MobileNav({ sections, siteName }: MobileNavProps) {
             aria-label="Mobile navigation"
             className="fixed inset-x-4 top-[4.5rem] z-50 max-h-[calc(100vh-6rem)] overflow-y-auto rounded-xl border border-stone-200 bg-white p-4 shadow-lg"
           >
-            <p className="px-2 text-xs font-semibold uppercase tracking-wide text-stone-500">
+            <p className="px-2 text-xs font-semibold uppercase tracking-wide text-stone-600">
               Browse topics
             </p>
             <ul className="mt-2 space-y-1">
               <li>
-                <Link
+                <NavLink
                   href="/"
+                  exact
                   className={cn(
                     "block rounded-lg px-3 py-2.5 text-sm font-medium text-stone-700 transition hover:bg-amber-50 hover:text-amber-800",
                   )}
-                  onClick={() => closeMenu()}
+                  activeClassName={navActiveClassName}
+                  onClick={() => closeMenu(false)}
                 >
                   Home
-                </Link>
+                </NavLink>
               </li>
               {sections.map((section) => (
                 <li key={section.slug}>
-                  <Link
+                  <NavLink
                     href={section.href}
                     className="block rounded-lg px-3 py-2.5 text-sm font-medium text-stone-700 transition hover:bg-amber-50 hover:text-amber-800"
-                    onClick={() => closeMenu()}
+                    activeClassName={navActiveClassName}
+                    onClick={() => closeMenu(false)}
                   >
                     {section.title}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
             </ul>
-            <p className="mt-4 border-t border-stone-100 px-2 pt-4 text-xs text-stone-500">
+            <p className="mt-4 border-t border-stone-100 px-2 pt-4 text-xs text-stone-600">
               {siteName} — trusted answers for dog owners
             </p>
           </nav>
