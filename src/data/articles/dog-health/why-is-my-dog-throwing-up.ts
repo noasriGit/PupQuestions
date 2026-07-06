@@ -134,8 +134,13 @@ export const whyIsMyDogThrowingUp: HealthArticle = {
       category: "dog-health",
     },
     {
-      title: "Can dogs take Benadryl?",
-      slug: "can-dogs-take-benadryl",
+      title: "Colitis in Dogs: Signs, Causes, and When to See Your Vet",
+      slug: "colitis-in-dogs",
+      category: "dog-health",
+    },
+    {
+      title: "Worms in Dogs: Signs, Types, and When to See Your Vet",
+      slug: "worms-in-dogs",
       category: "dog-health",
     },
   ],

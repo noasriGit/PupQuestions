@@ -99,12 +99,17 @@ const dogHealthHub: HubConfig = {
   featuredSlugs: [
     "why-is-my-dog-throwing-up",
     "why-does-my-dog-have-diarrhea",
-    "can-dogs-take-benadryl",
+    "uti-symptoms-in-dogs",
   ],
   articleGroupMap: {
     "why-is-my-dog-throwing-up": "digestion",
     "why-does-my-dog-have-diarrhea": "digestion",
     "can-dogs-take-benadryl": "medications",
+    "ringworm-in-dogs": "skin-coat",
+    "worms-in-dogs": "parasites",
+    "uti-symptoms-in-dogs": "symptoms",
+    "signs-of-ear-infection-in-dogs": "ears-eyes",
+    "colitis-in-dogs": "digestion",
   },
   showHealthDisclaimer: true,
   trustNote: {

@@ -29,8 +29,13 @@ import { whyDoDogsSmellLikeFritos } from "@/data/articles/dog-behavior/why-do-do
 import { whyDoDogsSneeze } from "@/data/articles/dog-behavior/why-do-dogs-sneeze";
 import { whyDoDogsSnore } from "@/data/articles/dog-behavior/why-do-dogs-snore";
 import { canDogsTakeBenadryl } from "@/data/articles/dog-health/can-dogs-take-benadryl";
+import { colitisInDogs } from "@/data/articles/dog-health/colitis-in-dogs";
+import { ringwormInDogs } from "@/data/articles/dog-health/ringworm-in-dogs";
+import { signsOfEarInfectionInDogs } from "@/data/articles/dog-health/signs-of-ear-infection-in-dogs";
+import { utiSymptomsInDogs } from "@/data/articles/dog-health/uti-symptoms-in-dogs";
 import { whyDoesMyDogHaveDiarrhea } from "@/data/articles/dog-health/why-does-my-dog-have-diarrhea";
 import { whyIsMyDogThrowingUp } from "@/data/articles/dog-health/why-is-my-dog-throwing-up";
+import { wormsInDogs } from "@/data/articles/dog-health/worms-in-dogs";
 import { bestDogBowls } from "@/data/articles/dog-products/best-dog-bowls";
 import { bestDogCrates } from "@/data/articles/dog-products/best-dog-crates";
 import { bestDogPools } from "@/data/articles/dog-products/best-dog-pools";
@@ -70,6 +75,11 @@ export const articles: Article[] = [
   whyIsMyDogThrowingUp,
   whyDoesMyDogHaveDiarrhea,
   canDogsTakeBenadryl,
+  ringwormInDogs,
+  wormsInDogs,
+  utiSymptomsInDogs,
+  signsOfEarInfectionInDogs,
+  colitisInDogs,
   doDogsDream,
   doDogsHaveBellyButtons,
   howManyTeethDoDogsHave,
