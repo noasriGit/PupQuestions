@@ -6,6 +6,7 @@ import { HubStructuredData } from "@/components/seo/HubStructuredData";
 import { ArticleHeader } from "@/components/ui/ArticleHeader";
 import { Container } from "@/components/ui/Container";
 import { DisclaimerBox } from "@/components/ui/DisclaimerBox";
+import { PopularDogQuestions } from "@/components/ui/PopularDogQuestions";
 import { TrustNote } from "@/components/ui/TrustNote";
 import { getHubConfigOrThrow } from "@/data/hubs";
 import { getSectionBySlug } from "@/data/sections";
@@ -91,9 +92,10 @@ export function CategoryHubPage({ category }: CategoryHubPageProps) {
         </div>
 
         <div className="mt-14 border-t border-stone-200 pt-8 sm:mt-16">
+          <PopularDogQuestions title="Popular dog questions" />
           <Link
             href="/"
-            className="text-sm font-medium text-amber-700 hover:text-amber-800"
+            className="mt-8 inline-block text-sm font-medium text-amber-700 hover:text-amber-800"
           >
             ← Back to home
           </Link>

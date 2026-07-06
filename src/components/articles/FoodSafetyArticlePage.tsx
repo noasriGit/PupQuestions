@@ -4,9 +4,9 @@ import { Container } from "@/components/ui/Container";
 import { DisclaimerBox } from "@/components/ui/DisclaimerBox";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { QuickAnswerBox } from "@/components/ui/QuickAnswerBox";
-import { RelatedQuestions } from "@/components/ui/RelatedQuestions";
 import { SourcesSection } from "@/components/ui/SourcesSection";
 import { TrustNote } from "@/components/ui/TrustNote";
+import { ArticleRelatedContent } from "@/components/articles/ArticleRelatedContent";
 import {
   EmergencyNote,
   FoodSafetyBlockContent,
@@ -17,7 +17,6 @@ import { getSectionBySlug } from "@/data/sections";
 import {
   formatLastUpdated,
   formatReadingTime,
-  resolveRelatedQuestions,
 } from "@/lib/articles";
 import {
   getSafetyQuickAnswerLabel,
@@ -31,7 +30,6 @@ type FoodSafetyArticlePageProps = {
 
 export function FoodSafetyArticlePage({ article }: FoodSafetyArticlePageProps) {
   const section = getSectionBySlug(article.category)!;
-  const relatedQuestions = resolveRelatedQuestions(article.relatedQuestions);
 
   return (
     <>
@@ -134,13 +132,11 @@ export function FoodSafetyArticlePage({ article }: FoodSafetyArticlePageProps) {
           <SourcesSection sources={article.sources} className="mb-10" />
         ) : null}
 
-        {relatedQuestions.length > 0 ? (
-          <RelatedQuestions
-            questions={relatedQuestions}
-            title="Related food questions"
-            className="mb-12"
-          />
-        ) : null}
+        <ArticleRelatedContent
+          article={article}
+          relatedTitle="Related food questions"
+          className="mb-12"
+        />
 
         {article.faqs.length > 0 ? (
           <FaqSection items={article.faqs} className="mb-12" />

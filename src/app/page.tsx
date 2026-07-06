@@ -4,12 +4,11 @@ import Link from "next/link";
 import { HomeStructuredData } from "@/components/seo/HomeStructuredData";
 import { CardGrid } from "@/components/ui/CardGrid";
 import { Container } from "@/components/ui/Container";
-import { RelatedQuestions } from "@/components/ui/RelatedQuestions";
-import { SearchPlaceholder } from "@/components/ui/SearchPlaceholder";
+import { PopularDogQuestions } from "@/components/ui/PopularDogQuestions";
+import { SearchForm } from "@/components/ui/SearchForm";
 import { SectionCard } from "@/components/ui/SectionCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TrustNote } from "@/components/ui/TrustNote";
-import { popularQuestions } from "@/data/placeholders";
 import { sections } from "@/data/sections";
 import { siteConfig } from "@/data/site";
 import { createHomeMetadata } from "@/lib/metadata";
@@ -34,7 +33,7 @@ export default function HomePage() {
               behavior, training, breeds, puppy care, grooming, and products —
               written for clarity, not clickbait.
             </p>
-            <SearchPlaceholder className="mx-auto mt-8 max-w-xl text-left" />
+            <SearchForm className="mx-auto mt-8 max-w-xl text-left" showHint />
           </div>
         </Container>
       </section>
@@ -68,7 +67,7 @@ export default function HomePage() {
             title="Popular questions"
             description="Common questions dog owners search for — answered with clear, practical guides."
           />
-          <RelatedQuestions questions={popularQuestions} />
+          <PopularDogQuestions />
           <p className="mt-6 text-center text-sm text-stone-500">
             Explore more topics in{" "}
             <Link

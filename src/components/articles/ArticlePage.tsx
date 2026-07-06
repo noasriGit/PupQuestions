@@ -11,8 +11,8 @@ import { Container } from "@/components/ui/Container";
 import { DisclaimerBox } from "@/components/ui/DisclaimerBox";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { QuickAnswerBox } from "@/components/ui/QuickAnswerBox";
-import { RelatedQuestions } from "@/components/ui/RelatedQuestions";
 import { SourcesSection } from "@/components/ui/SourcesSection";
+import { ArticleRelatedContent } from "@/components/articles/ArticleRelatedContent";
 import { getSectionBySlug } from "@/data/sections";
 import {
   formatLastUpdated,
@@ -23,7 +23,6 @@ import {
   isHealthArticle,
   isProductGuideArticle,
   isTrainingArticle,
-  resolveRelatedQuestions,
 } from "@/lib/articles";
 import type { Article, ArticleSection } from "@/types/content";
 
@@ -55,7 +54,6 @@ function ArticleSections({ sections }: { sections: ArticleSection[] }) {
 
 function GenericArticlePage({ article }: ArticlePageProps) {
   const section = getSectionBySlug(article.category)!;
-  const relatedQuestions = resolveRelatedQuestions(article.relatedQuestions);
   const showDisclaimer = article.template === "puppy-care";
 
   return (
@@ -120,12 +118,7 @@ function GenericArticlePage({ article }: ArticlePageProps) {
           <SourcesSection sources={article.sources} className="mb-10" />
         ) : null}
 
-        {relatedQuestions.length > 0 ? (
-          <RelatedQuestions
-            questions={relatedQuestions}
-            className="mb-12"
-          />
-        ) : null}
+        <ArticleRelatedContent article={article} relatedTitle="Related questions" className="mb-12" />
 
         {article.faqs.length > 0 ? (
           <FaqSection items={article.faqs} className="mb-12" />

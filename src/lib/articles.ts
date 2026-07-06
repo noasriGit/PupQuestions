@@ -6,11 +6,8 @@ import {
   getArticleStaticParams,
   getIndexableArticles,
 } from "@/data/articles";
-import { getSectionBySlug } from "@/data/sections";
-import type { RelatedQuestion } from "@/components/ui/RelatedQuestions";
 import type {
   Article,
-  ArticleRelatedQuestion,
   BehaviorArticle,
   BreedListArticle,
   ContentCategory,
@@ -36,22 +33,7 @@ export function getArticleHref(category: ContentCategory, slug: string): string 
   return `/${category}/${slug}`;
 }
 
-export function resolveRelatedQuestions(
-  related: ArticleRelatedQuestion[],
-): RelatedQuestion[] {
-  return related
-    .filter((item) =>
-      Boolean(getArticleByCategoryAndSlug(item.category, item.slug)),
-    )
-    .map((item) => {
-      const section = getSectionBySlug(item.category);
-      return {
-        title: item.title,
-        href: getArticleHref(item.category, item.slug),
-        section: section?.title,
-      };
-    });
-}
+export { resolveRelatedQuestions } from "@/lib/internal-links";
 
 export function formatReadingTime(minutes: number): string {
   return `${minutes} min read`;

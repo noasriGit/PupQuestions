@@ -10,14 +10,13 @@ import { ArticleHeader } from "@/components/ui/ArticleHeader";
 import { Container } from "@/components/ui/Container";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { QuickAnswerBox } from "@/components/ui/QuickAnswerBox";
-import { RelatedQuestions } from "@/components/ui/RelatedQuestions";
 import { SourcesSection } from "@/components/ui/SourcesSection";
 import { TrustNote } from "@/components/ui/TrustNote";
+import { ArticleRelatedContent } from "@/components/articles/ArticleRelatedContent";
 import { getSectionBySlug } from "@/data/sections";
 import {
   formatLastUpdated,
   formatReadingTime,
-  resolveRelatedQuestions,
 } from "@/lib/articles";
 import type { BreedListArticle } from "@/types/content";
 
@@ -27,7 +26,6 @@ type BreedListArticlePageProps = {
 
 export function BreedListArticlePage({ article }: BreedListArticlePageProps) {
   const section = getSectionBySlug(article.category)!;
-  const relatedQuestions = resolveRelatedQuestions(article.relatedQuestions);
 
   return (
     <>
@@ -91,13 +89,11 @@ export function BreedListArticlePage({ article }: BreedListArticlePageProps) {
           <SourcesSection sources={article.sources} className="mb-10 mt-8" />
         ) : null}
 
-        {relatedQuestions.length > 0 ? (
-          <RelatedQuestions
-            questions={relatedQuestions}
-            title="Related breed questions"
-            className="mb-12 mt-8"
-          />
-        ) : null}
+        <ArticleRelatedContent
+          article={article}
+          relatedTitle="Related breed questions"
+          className="mb-12 mt-8"
+        />
 
         {article.faqs.length > 0 ? (
           <FaqSection items={article.faqs} className="mb-12" />
