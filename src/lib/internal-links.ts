@@ -28,9 +28,9 @@ export const POPULAR_QUESTION_ENTRIES: PopularQuestionEntry[] = [
   { kind: "article", category: "can-dogs-eat", slug: "blueberries" },
   { kind: "article", category: "dog-behavior", slug: "why-do-dogs-eat-grass" },
   {
-    kind: "hub",
+    kind: "article",
     category: "dog-grooming",
-    title: "How often should I bathe my dog?",
+    slug: "how-often-should-you-bathe-a-dog",
   },
   {
     kind: "article",

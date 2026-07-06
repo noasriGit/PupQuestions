@@ -11,8 +11,10 @@ const canDogsEatHub: HubConfig = {
     "Can dogs eat blueberries, peanut butter, and more? Browse food safety guides by category — fruits, vegetables, proteins, dairy, and toxic foods to avoid.",
   featuredSlugs: ["blueberries", "watermelon", "peanut-butter"],
   articleGroupMap: {
+    bananas: "fruits",
     blueberries: "fruits",
     watermelon: "fruits",
+    pumpkin: "vegetables",
     "peanut-butter": "ingredients-supplements",
   },
   trustNote: {
@@ -171,6 +173,7 @@ const dogBehaviorHub: HubConfig = {
   featuredSlugs: ["why-do-dogs-eat-grass", "do-dogs-dream"],
   articleGroupMap: {
     "why-do-dogs-eat-grass": "eating-odd-things",
+    "why-do-dogs-eat-poop": "eating-odd-things",
     "do-dogs-dream": "sleep-dreams",
   },
   topicGroups: [
@@ -342,8 +345,10 @@ const puppyCareHub: HubConfig = {
     "Puppies grow fast and need a plan. This hub organizes early-care topics so you can build routines for health, housetraining, crate comfort, and confidence — without guessing what to tackle first.",
   seoDescription:
     "Puppy care guides for new owners — feeding, potty training, crate training, socialization, and early health basics.",
-  featuredSlugs: [],
-  articleGroupMap: {},
+  featuredSlugs: ["how-to-potty-train-a-puppy"],
+  articleGroupMap: {
+    "how-to-potty-train-a-puppy": "potty-training",
+  },
   trustNote: {
     title: "Puppy care builds on good routines",
     content:
@@ -468,8 +473,10 @@ const dogGroomingHub: HubConfig = {
     "Regular grooming keeps dogs comfortable and makes health issues easier to spot early. This hub groups grooming topics by task so you can build a routine that matches your dog's coat, lifestyle, and tolerance.",
   seoDescription:
     "Dog grooming guides for bathing, brushing, nail trimming, ear cleaning, dental care, and shedding control.",
-  featuredSlugs: [],
-  articleGroupMap: {},
+  featuredSlugs: ["how-often-should-you-bathe-a-dog"],
+  articleGroupMap: {
+    "how-often-should-you-bathe-a-dog": "bathing",
+  },
   trustNote: {
     title: "Grooming supports health, not just appearance",
     content:

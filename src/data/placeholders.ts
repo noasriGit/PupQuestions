@@ -16,8 +16,8 @@ export const popularQuestions: PlaceholderQuestion[] = [
     section: "Dog Behavior",
   },
   {
-    title: "How often should I bathe my dog?",
-    href: "/dog-grooming",
+    title: "How often should you bathe a dog?",
+    href: "/dog-grooming/how-often-should-you-bathe-a-dog",
     section: "Dog Grooming",
   },
   {

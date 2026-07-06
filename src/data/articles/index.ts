@@ -1,15 +1,20 @@
+import { bananas } from "@/data/articles/can-dogs-eat/bananas";
 import { blueberries } from "@/data/articles/can-dogs-eat/blueberries";
 import { peanutButter } from "@/data/articles/can-dogs-eat/peanut-butter";
+import { pumpkin } from "@/data/articles/can-dogs-eat/pumpkin";
 import { watermelon } from "@/data/articles/can-dogs-eat/watermelon";
 import { bestApartmentDogs } from "@/data/articles/dog-breeds/best-apartment-dogs";
 import { bestFamilyDogs } from "@/data/articles/dog-breeds/best-family-dogs";
 import { doDogsDream } from "@/data/articles/dog-behavior/do-dogs-dream";
 import { whyDoDogsEatGrass } from "@/data/articles/dog-behavior/why-do-dogs-eat-grass";
+import { whyDoDogsEatPoop } from "@/data/articles/dog-behavior/why-do-dogs-eat-poop";
 import { canDogsTakeBenadryl } from "@/data/articles/dog-health/can-dogs-take-benadryl";
 import { whyDoesMyDogHaveDiarrhea } from "@/data/articles/dog-health/why-does-my-dog-have-diarrhea";
 import { whyIsMyDogThrowingUp } from "@/data/articles/dog-health/why-is-my-dog-throwing-up";
 import { bestDogBowls } from "@/data/articles/dog-products/best-dog-bowls";
 import { bestDogCrates } from "@/data/articles/dog-products/best-dog-crates";
+import { howOftenShouldYouBatheADog } from "@/data/articles/dog-grooming/how-often-should-you-bathe-a-dog";
+import { howToPottyTrainAPuppy } from "@/data/articles/puppy-care/how-to-potty-train-a-puppy";
 import { howToCrateTrainAPuppy } from "@/data/articles/dog-training/how-to-crate-train-a-puppy";
 import { howToStopDogPullingOnLeash } from "@/data/articles/dog-training/how-to-stop-dog-pulling-on-leash";
 import { isArticleIndexable } from "@/lib/indexing";
@@ -20,13 +25,16 @@ import type { Article, ContentCategory } from "@/types/content";
  * Add new articles here to expose them via routing and utilities.
  */
 export const articles: Article[] = [
+  bananas,
   blueberries,
   watermelon,
   peanutButter,
+  pumpkin,
   whyIsMyDogThrowingUp,
   whyDoesMyDogHaveDiarrhea,
   canDogsTakeBenadryl,
   whyDoDogsEatGrass,
+  whyDoDogsEatPoop,
   doDogsDream,
   howToStopDogPullingOnLeash,
   howToCrateTrainAPuppy,
@@ -34,6 +42,8 @@ export const articles: Article[] = [
   bestApartmentDogs,
   bestDogCrates,
   bestDogBowls,
+  howToPottyTrainAPuppy,
+  howOftenShouldYouBatheADog,
 ];
 
 export function getAllArticles(): Article[] {
