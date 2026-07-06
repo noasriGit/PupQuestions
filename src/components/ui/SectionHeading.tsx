@@ -9,6 +9,7 @@ type SectionHeadingProps = {
   align?: "left" | "center";
   action?: ReactNode;
   className?: string;
+  id?: string;
 };
 
 export function SectionHeading({
@@ -18,6 +19,7 @@ export function SectionHeading({
   align = "left",
   action,
   className,
+  id,
 }: SectionHeadingProps) {
   const isCenter = align === "center";
 
@@ -39,6 +41,7 @@ export function SectionHeading({
           </p>
         ) : null}
         <h2
+          id={id}
           className={cn(
             "text-2xl font-bold tracking-tight text-stone-900 sm:text-3xl",
             eyebrow && "mt-2",

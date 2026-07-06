@@ -1,22 +1,10 @@
 import type { Metadata } from "next";
 
-import { SectionPlaceholder } from "@/components/sections/SectionPlaceholder";
-import { getSectionBySlug } from "@/data/sections";
-import { createPageMetadata } from "@/lib/metadata";
+import { CategoryHubPage } from "@/components/hubs/CategoryHubPage";
+import { createHubMetadata } from "@/lib/hubs";
 
-const section = getSectionBySlug("can-dogs-eat")!;
-
-export const metadata: Metadata = createPageMetadata({
-  title: section.title,
-  description: section.description,
-  path: section.href,
-});
+export const metadata: Metadata = createHubMetadata("can-dogs-eat");
 
 export default function CanDogsEatPage() {
-  return (
-    <SectionPlaceholder
-      title={section.title}
-      description={section.description}
-    />
-  );
+  return <CategoryHubPage category="can-dogs-eat" />;
 }
