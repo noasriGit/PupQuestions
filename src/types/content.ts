@@ -24,7 +24,17 @@ export type ArticleTemplate =
   | "puppy-care"
   | "grooming";
 
-export type SafetyLevel = "safe" | "caution" | "unsafe" | "toxic";
+/**
+ * Safety ratings for food-safety articles.
+ * Maps to user-facing labels in the food safety template.
+ */
+export type SafetyLevel =
+  | "safe"
+  | "moderation"
+  | "caution"
+  | "not-recommended"
+  | "unsafe"
+  | "toxic";
 
 export type UrgencyLevel = "routine" | "monitor" | "urgent";
 
@@ -49,6 +59,12 @@ export type ArticleRelatedQuestion = {
 export type ArticleFaq = {
   question: string;
   answer: string;
+};
+
+/** Structured content block used in food safety template sections. */
+export type FoodSafetyBlock = {
+  paragraphs: string[];
+  listItems?: string[];
 };
 
 type ArticleCore = {
@@ -76,7 +92,17 @@ type ArticleCore = {
 export type FoodSafetyArticle = ArticleCore & {
   template: "food-safety";
   category: "can-dogs-eat";
+  foodName: string;
   safetyLevel: SafetyLevel;
+  directAnswer: FoodSafetyBlock;
+  benefits?: FoodSafetyBlock;
+  risks: FoodSafetyBlock;
+  servingGuidance: FoodSafetyBlock;
+  safePreparation: FoodSafetyBlock;
+  avoidIf: FoodSafetyBlock;
+  tooMuch: FoodSafetyBlock;
+  whenToCallVet: FoodSafetyBlock;
+  emergencyNote?: string;
 };
 
 export type HealthArticle = ArticleCore & {

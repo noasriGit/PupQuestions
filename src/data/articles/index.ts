@@ -1,4 +1,6 @@
 import { blueberries } from "@/data/articles/can-dogs-eat/blueberries";
+import { peanutButter } from "@/data/articles/can-dogs-eat/peanut-butter";
+import { watermelon } from "@/data/articles/can-dogs-eat/watermelon";
 import { bestFamilyDogs } from "@/data/articles/dog-breeds/best-family-dogs";
 import { whyDoDogsEatGrass } from "@/data/articles/dog-behavior/why-do-dogs-eat-grass";
 import { whyIsMyDogThrowingUp } from "@/data/articles/dog-health/why-is-my-dog-throwing-up";
@@ -12,6 +14,8 @@ import type { Article, ContentCategory } from "@/types/content";
  */
 export const articles: Article[] = [
   blueberries,
+  watermelon,
+  peanutButter,
   whyIsMyDogThrowingUp,
   whyDoDogsEatGrass,
   howToStopDogPullingOnLeash,

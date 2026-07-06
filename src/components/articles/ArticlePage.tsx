@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 
+import { FoodSafetyArticlePage } from "@/components/articles/FoodSafetyArticlePage";
 import { ArticleBody } from "@/components/ui/ArticleBody";
 import { ArticleHeader } from "@/components/ui/ArticleHeader";
 import { Container } from "@/components/ui/Container";
@@ -17,8 +18,6 @@ import {
   isFoodSafetyArticle,
   isHealthArticle,
   resolveRelatedQuestions,
-  safetyLevelToQuickAnswerVariant,
-  type QuickAnswerVariant,
 } from "@/lib/articles";
 import type { Article, ArticleSection } from "@/types/content";
 
@@ -48,23 +47,7 @@ function ArticleSections({ sections }: { sections: ArticleSection[] }) {
   );
 }
 
-function getQuickAnswerVariant(article: Article): QuickAnswerVariant {
-  if (isFoodSafetyArticle(article)) {
-    return safetyLevelToQuickAnswerVariant(article.safetyLevel);
-  }
-  return "neutral";
-}
-
 function getQuickAnswerLabel(article: Article): string {
-  if (isFoodSafetyArticle(article)) {
-    const labels: Record<string, string> = {
-      safe: "Generally safe",
-      caution: "Use caution",
-      unsafe: "Not safe",
-      toxic: "Toxic — avoid",
-    };
-    return labels[article.safetyLevel] ?? "Quick answer";
-  }
   if (isHealthArticle(article)) {
     const labels: Record<string, string> = {
       routine: "Quick answer",
@@ -77,15 +60,6 @@ function getQuickAnswerLabel(article: Article): string {
 }
 
 function getTrustNote(article: Article): ReactNode | null {
-  if (isFoodSafetyArticle(article)) {
-    return (
-      <>
-        Food safety guidance on PupQuestions is general information only. Individual
-        dogs may react differently based on health, size, and ingredients. When in
-        doubt, ask your veterinarian before sharing human foods.
-      </>
-    );
-  }
   if (isHealthArticle(article)) {
     if (article.urgencyLevel === "urgent") {
       return (
@@ -109,13 +83,12 @@ function getTrustNote(article: Article): ReactNode | null {
 
 function shouldShowDisclaimer(article: Article): boolean {
   return (
-    isFoodSafetyArticle(article) ||
     isHealthArticle(article) ||
     article.template === "puppy-care"
   );
 }
 
-export function ArticlePage({ article }: ArticlePageProps) {
+function GenericArticlePage({ article }: ArticlePageProps) {
   const section = getSectionBySlug(article.category)!;
   const relatedQuestions = resolveRelatedQuestions(article.relatedQuestions);
   const trustNote = getTrustNote(article);
@@ -147,7 +120,7 @@ export function ArticlePage({ article }: ArticlePageProps) {
 
       <Container size="narrow">
         <QuickAnswerBox
-          variant={getQuickAnswerVariant(article)}
+          variant="neutral"
           label={getQuickAnswerLabel(article)}
           className="mt-8"
         >
@@ -170,7 +143,7 @@ export function ArticlePage({ article }: ArticlePageProps) {
             {article.editorialNote ? (
               <>
                 {" "}
-                <span className="block mt-2 text-amber-900/90">
+                <span className="mt-2 block text-amber-900/90">
                   {article.editorialNote}
                 </span>
               </>
@@ -199,6 +172,14 @@ export function ArticlePage({ article }: ArticlePageProps) {
       </Container>
     </>
   );
+}
+
+export function ArticlePage({ article }: ArticlePageProps) {
+  if (isFoodSafetyArticle(article)) {
+    return <FoodSafetyArticlePage article={article} />;
+  }
+
+  return <GenericArticlePage article={article} />;
 }
 
 export function getArticleMetadataFields(article: Article) {

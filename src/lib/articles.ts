@@ -11,6 +11,7 @@ import type {
   Article,
   ArticleRelatedQuestion,
   ContentCategory,
+  FoodSafetyArticle,
   SafetyLevel,
 } from "@/types/content";
 
@@ -41,22 +42,6 @@ export function resolveRelatedQuestions(
   });
 }
 
-export function safetyLevelToQuickAnswerVariant(
-  level: SafetyLevel,
-): QuickAnswerVariant {
-  switch (level) {
-    case "safe":
-      return "safe";
-    case "caution":
-      return "caution";
-    case "unsafe":
-    case "toxic":
-      return "unsafe";
-    default:
-      return "neutral";
-  }
-}
-
 export function formatReadingTime(minutes: number): string {
   return `${minutes} min read`;
 }
@@ -82,6 +67,25 @@ export function isHealthArticle(
 
 export function isFoodSafetyArticle(
   article: Article,
-): article is Article & { safetyLevel: SafetyLevel } {
+): article is FoodSafetyArticle {
   return article.template === "food-safety";
+}
+
+/** @deprecated Use safetyLevelToQuickAnswerVariant from @/lib/food-safety */
+export function safetyLevelToQuickAnswerVariant(
+  level: SafetyLevel,
+): QuickAnswerVariant {
+  switch (level) {
+    case "safe":
+    case "moderation":
+      return "safe";
+    case "caution":
+    case "not-recommended":
+      return "caution";
+    case "unsafe":
+    case "toxic":
+      return "unsafe";
+    default:
+      return "neutral";
+  }
 }
