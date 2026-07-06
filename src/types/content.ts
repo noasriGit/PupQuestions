@@ -132,6 +132,8 @@ type ArticleCore = {
   lastUpdated: string;
   readingTime: number;
   status: ContentStatus;
+  /** When true, the page is excluded from the sitemap and marked noindex. */
+  noindex?: boolean;
   editorialNote?: string;
 };
 

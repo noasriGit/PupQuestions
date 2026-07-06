@@ -12,6 +12,7 @@ import { bestDogBowls } from "@/data/articles/dog-products/best-dog-bowls";
 import { bestDogCrates } from "@/data/articles/dog-products/best-dog-crates";
 import { howToCrateTrainAPuppy } from "@/data/articles/dog-training/how-to-crate-train-a-puppy";
 import { howToStopDogPullingOnLeash } from "@/data/articles/dog-training/how-to-stop-dog-pulling-on-leash";
+import { isArticleIndexable } from "@/lib/indexing";
 import type { Article, ContentCategory } from "@/types/content";
 
 /**
@@ -37,6 +38,11 @@ export const articles: Article[] = [
 
 export function getAllArticles(): Article[] {
   return articles.filter((article) => article.status === "published");
+}
+
+/** Published articles eligible for sitemap and search indexing. */
+export function getIndexableArticles(): Article[] {
+  return articles.filter(isArticleIndexable);
 }
 
 export function getArticleByCategoryAndSlug(

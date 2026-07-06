@@ -1,3 +1,4 @@
+import { ArticleStructuredData } from "@/components/seo/ArticleStructuredData";
 import { BehaviorArticlePage } from "@/components/articles/BehaviorArticlePage";
 import { BreedListArticlePage } from "@/components/articles/BreedListArticlePage";
 import { FoodSafetyArticlePage } from "@/components/articles/FoodSafetyArticlePage";
@@ -16,7 +17,6 @@ import { getSectionBySlug } from "@/data/sections";
 import {
   formatLastUpdated,
   formatReadingTime,
-  getArticlePath,
   isBehaviorArticle,
   isBreedListArticle,
   isFoodSafetyArticle,
@@ -136,37 +136,28 @@ function GenericArticlePage({ article }: ArticlePageProps) {
 }
 
 export function ArticlePage({ article }: ArticlePageProps) {
+  let content;
+
   if (isFoodSafetyArticle(article)) {
-    return <FoodSafetyArticlePage article={article} />;
+    content = <FoodSafetyArticlePage article={article} />;
+  } else if (isHealthArticle(article)) {
+    content = <HealthArticlePage article={article} />;
+  } else if (isBehaviorArticle(article)) {
+    content = <BehaviorArticlePage article={article} />;
+  } else if (isTrainingArticle(article)) {
+    content = <TrainingArticlePage article={article} />;
+  } else if (isBreedListArticle(article)) {
+    content = <BreedListArticlePage article={article} />;
+  } else if (isProductGuideArticle(article)) {
+    content = <ProductGuideArticlePage article={article} />;
+  } else {
+    content = <GenericArticlePage article={article} />;
   }
 
-  if (isHealthArticle(article)) {
-    return <HealthArticlePage article={article} />;
-  }
-
-  if (isBehaviorArticle(article)) {
-    return <BehaviorArticlePage article={article} />;
-  }
-
-  if (isTrainingArticle(article)) {
-    return <TrainingArticlePage article={article} />;
-  }
-
-  if (isBreedListArticle(article)) {
-    return <BreedListArticlePage article={article} />;
-  }
-
-  if (isProductGuideArticle(article)) {
-    return <ProductGuideArticlePage article={article} />;
-  }
-
-  return <GenericArticlePage article={article} />;
-}
-
-export function getArticleMetadataFields(article: Article) {
-  return {
-    title: article.title,
-    description: article.description,
-    path: getArticlePath(article),
-  };
+  return (
+    <>
+      <ArticleStructuredData article={article} />
+      {content}
+    </>
+  );
 }

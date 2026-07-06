@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
+import { HomeStructuredData } from "@/components/seo/HomeStructuredData";
 import { CardGrid } from "@/components/ui/CardGrid";
 import { Container } from "@/components/ui/Container";
 import { RelatedQuestions } from "@/components/ui/RelatedQuestions";
@@ -10,10 +12,14 @@ import { TrustNote } from "@/components/ui/TrustNote";
 import { popularQuestions } from "@/data/placeholders";
 import { sections } from "@/data/sections";
 import { siteConfig } from "@/data/site";
+import { createHomeMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = createHomeMetadata();
 
 export default function HomePage() {
   return (
     <>
+      <HomeStructuredData />
       <section className="border-b border-stone-200 bg-white">
         <Container className="py-14 sm:py-20">
           <div className="mx-auto max-w-3xl text-center">
@@ -38,7 +44,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Explore topics"
             title="Browse by category"
-            description="Each section is ready for guides and structured answers. Start with the topic that matches your question."
+            description="Each section collects guides and structured answers. Start with the topic that matches your question."
           />
           <CardGrid columns={3}>
             {sections.map((section) => (
@@ -58,19 +64,27 @@ export default function HomePage() {
       <section className="border-y border-stone-200 bg-stone-50/80">
         <Container className="py-12 sm:py-16">
           <SectionHeading
-            eyebrow="Coming soon"
+            eyebrow="Start here"
             title="Popular questions"
-            description="Sample questions dog owners search for most. Full article pages will arrive in a later phase."
+            description="Common questions dog owners search for — answered with clear, practical guides."
           />
           <RelatedQuestions questions={popularQuestions} />
           <p className="mt-6 text-center text-sm text-stone-500">
-            More answers are on the way.{" "}
+            Explore more topics in{" "}
             <Link
-              href="/can-dogs-eat"
+              href="/dog-health"
               className="font-medium text-amber-700 hover:text-amber-800"
             >
-              Browse Can Dogs Eat →
+              Dog Health
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/dog-training"
+              className="font-medium text-amber-700 hover:text-amber-800"
+            >
+              Dog Training
             </Link>
+            .
           </p>
         </Container>
       </section>

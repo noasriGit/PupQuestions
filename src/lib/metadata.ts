@@ -1,20 +1,48 @@
 import type { Metadata } from "next";
 
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/constants";
+import { getArticlePath } from "@/lib/articles";
+import {
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TAGLINE,
+  SITE_URL,
+} from "@/lib/constants";
+import { isArticleIndexable } from "@/lib/indexing";
+import type { Article } from "@/types/content";
 
 type PageMetadataOptions = {
   title?: string;
   description?: string;
   path?: string;
+  noindex?: boolean;
+  openGraphType?: "website" | "article";
+  publishedTime?: string;
+  modifiedTime?: string;
 };
+
+function normalizePath(path: string): string {
+  if (!path || path === "/") {
+    return "";
+  }
+
+  return path.startsWith("/") ? path : `/${path}`;
+}
+
+function buildCanonicalUrl(path: string): string {
+  return `${SITE_URL}${normalizePath(path)}`;
+}
 
 export function createPageMetadata({
   title,
   description = SITE_DESCRIPTION,
   path = "",
+  noindex = false,
+  openGraphType = "website",
+  publishedTime,
+  modifiedTime,
 }: PageMetadataOptions): Metadata {
   const pageTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
-  const url = `${SITE_URL}${path}`;
+  const url = buildCanonicalUrl(path);
 
   const base: Metadata = {
     description,
@@ -24,17 +52,31 @@ export function createPageMetadata({
       description,
       url,
       siteName: SITE_NAME,
-      type: "website",
+      type: openGraphType,
       locale: "en_US",
+      ...(openGraphType === "article" && publishedTime
+        ? {
+            publishedTime,
+            modifiedTime: modifiedTime ?? publishedTime,
+          }
+        : {}),
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary",
       title: pageTitle,
       description,
     },
     alternates: {
       canonical: url,
     },
+    ...(noindex
+      ? {
+          robots: {
+            index: false,
+            follow: true,
+          },
+        }
+      : {}),
   };
 
   if (title) {
@@ -51,4 +93,31 @@ export function createPageMetadata({
       template: `%s | ${SITE_NAME}`,
     },
   };
+}
+
+export function createHomeMetadata(): Metadata {
+  return createPageMetadata({
+    description: `${SITE_TAGLINE} ${SITE_DESCRIPTION}`,
+    path: "/",
+  });
+}
+
+export function createArticleMetadata(article: Article): Metadata {
+  return createPageMetadata({
+    title: article.title,
+    description: article.description,
+    path: getArticlePath(article),
+    noindex: !isArticleIndexable(article),
+    openGraphType: "article",
+    publishedTime: article.lastUpdated,
+    modifiedTime: article.lastUpdated,
+  });
+}
+
+export function createNotFoundMetadata(): Metadata {
+  return createPageMetadata({
+    title: "Page Not Found",
+    description: "The page you are looking for does not exist or may have moved.",
+    noindex: true,
+  });
 }

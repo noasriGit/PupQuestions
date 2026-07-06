@@ -1,6 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/Container";
+import { createNotFoundMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = createNotFoundMetadata();
 
 export default function NotFound() {
   return (

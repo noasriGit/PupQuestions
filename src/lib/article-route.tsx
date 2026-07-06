@@ -3,13 +3,12 @@ import { notFound } from "next/navigation";
 
 import {
   ArticlePage,
-  getArticleMetadataFields,
 } from "@/components/articles/ArticlePage";
 import {
   getArticleByCategoryAndSlug,
   getArticleStaticParams,
 } from "@/lib/articles";
-import { createPageMetadata } from "@/lib/metadata";
+import { createArticleMetadata, createNotFoundMetadata } from "@/lib/metadata";
 import type { ContentCategory } from "@/types/content";
 
 type ArticleRouteParams = {
@@ -31,10 +30,10 @@ export function createArticleRoute(category: ContentCategory) {
       const article = getArticleByCategoryAndSlug(category, slug);
 
       if (!article) {
-        return createPageMetadata({ title: "Not Found" });
+        return createNotFoundMetadata();
       }
 
-      return createPageMetadata(getArticleMetadataFields(article));
+      return createArticleMetadata(article);
     },
 
     async Page({ params }: { params: Promise<ArticleRouteParams> }) {

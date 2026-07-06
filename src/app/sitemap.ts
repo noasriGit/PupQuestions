@@ -1,29 +1,55 @@
 import type { MetadataRoute } from "next";
 
-import { getAllArticles } from "@/data/articles";
+import { getIndexableArticles } from "@/data/articles";
 import { sections } from "@/data/sections";
-import { getArticlePath } from "@/lib/articles";
+import { getArticlesByCategory, getArticlePath } from "@/lib/articles";
 import { SITE_URL } from "@/lib/constants";
+import type { ContentCategory } from "@/types/content";
+
+function getHubLastModified(category: ContentCategory): Date {
+  const articles = getArticlesByCategory(category);
+
+  if (articles.length === 0) {
+    return new Date();
+  }
+
+  return new Date(
+    Math.max(...articles.map((article) => new Date(article.lastUpdated).getTime())),
+  );
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const indexableArticles = getIndexableArticles();
+
   const sectionEntries = sections.map((section) => ({
     url: `${SITE_URL}${section.href}`,
-    lastModified: new Date(),
+    lastModified: getHubLastModified(section.slug as ContentCategory),
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }));
 
-  const articleEntries = getAllArticles().map((article) => ({
+  const articleEntries = indexableArticles.map((article) => ({
     url: `${SITE_URL}${getArticlePath(article)}`,
     lastModified: new Date(article.lastUpdated),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
+  const homepageLastModified =
+    indexableArticles.length > 0
+      ? new Date(
+          Math.max(
+            ...indexableArticles.map(
+              (article) => new Date(article.lastUpdated).getTime(),
+            ),
+          ),
+        )
+      : new Date();
+
   return [
     {
       url: SITE_URL,
-      lastModified: new Date(),
+      lastModified: homepageLastModified,
       changeFrequency: "weekly",
       priority: 1,
     },

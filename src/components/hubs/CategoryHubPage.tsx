@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { HubFeaturedArticles, HubRecentArticles } from "@/components/hubs/HubArticleSections";
 import { HubTopicGroups } from "@/components/hubs/HubTopicGroups";
+import { HubStructuredData } from "@/components/seo/HubStructuredData";
 import { ArticleHeader } from "@/components/ui/ArticleHeader";
 import { Container } from "@/components/ui/Container";
 import { DisclaimerBox } from "@/components/ui/DisclaimerBox";
@@ -32,6 +33,7 @@ export function CategoryHubPage({ category }: CategoryHubPageProps) {
 
   return (
     <>
+      <HubStructuredData category={category} />
       <ArticleHeader
         title={section.title}
         description={hub.intro}
