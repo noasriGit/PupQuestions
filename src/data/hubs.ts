@@ -376,7 +376,7 @@ const puppyCareHub: HubConfig = {
   trustNote: {
     title: "Puppy care builds on good routines",
     content:
-      "Young dogs benefit from consistent schedules, positive training, and early vet visits. Articles here will emphasize practical routines you can start right away — and when to loop in your veterinarian for vaccines, diet changes, or worrying symptoms.",
+      "Young dogs benefit from consistent schedules, positive training, and early vet visits. Articles here emphasize practical routines you can start right away — and when to loop in your veterinarian for vaccines, diet changes, or worrying symptoms.",
   },
   topicGroups: [
     {

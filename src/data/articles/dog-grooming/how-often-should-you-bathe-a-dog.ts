@@ -82,11 +82,6 @@ export const howOftenShouldYouBatheADog: GroomingArticle = {
       slug: "how-to-manage-dog-shedding",
       category: "dog-grooming",
     },
-    {
-      title: "Why do dogs eat grass?",
-      slug: "why-do-dogs-eat-grass",
-      category: "dog-behavior",
-    },
   ],
   tags: ["bathing", "grooming", "skin", "coat care"],
   primaryKeyword: "how often should you bathe a dog",

@@ -94,9 +94,9 @@ export const shrimp: FoodSafetyArticle = {
       category: "can-dogs-eat",
     },
     {
-      title: "Can dogs eat peanut butter?",
-      slug: "peanut-butter",
-      category: "can-dogs-eat",
+      title: "Why does my dog have diarrhea?",
+      slug: "why-does-my-dog-have-diarrhea",
+      category: "dog-health",
     },
   ],
   tags: ["shrimp", "seafood", "protein", "treats"],

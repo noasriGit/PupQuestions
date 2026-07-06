@@ -85,9 +85,9 @@ export const whyDoDogsEatGrass: BehaviorArticle = {
       category: "dog-health",
     },
     {
-      title: "Do dogs dream?",
-      slug: "do-dogs-dream",
-      category: "dog-behavior",
+      title: "Why does my dog have diarrhea?",
+      slug: "why-does-my-dog-have-diarrhea",
+      category: "dog-health",
     },
   ],
   tags: ["grass", "eating", "behavior", "digestion"],

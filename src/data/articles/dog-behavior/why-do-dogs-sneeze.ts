@@ -84,9 +84,9 @@ export const whyDoDogsSneeze: BehaviorArticle = {
   ],
   relatedQuestions: [
     {
-      title: "Why do dogs get hiccups?",
-      slug: "why-do-dogs-get-hiccups",
-      category: "dog-behavior",
+      title: "Can dogs take Benadryl?",
+      slug: "can-dogs-take-benadryl",
+      category: "dog-health",
     },
     {
       title: "Why do dogs lick their paws?",
