@@ -13,6 +13,10 @@ import { turkey } from "@/data/articles/can-dogs-eat/turkey";
 import { watermelon } from "@/data/articles/can-dogs-eat/watermelon";
 import { bestApartmentDogs } from "@/data/articles/dog-breeds/best-apartment-dogs";
 import { bestFamilyDogs } from "@/data/articles/dog-breeds/best-family-dogs";
+import { bestGuardDogBreeds } from "@/data/articles/dog-breeds/best-guard-dog-breeds";
+import { bestLowMaintenanceDogs } from "@/data/articles/dog-breeds/best-low-maintenance-dogs";
+import { cutestDogBreeds } from "@/data/articles/dog-breeds/cutest-dog-breeds";
+import { hypoallergenicDogBreeds } from "@/data/articles/dog-breeds/hypoallergenic-dog-breeds";
 import { doDogsDream } from "@/data/articles/dog-behavior/do-dogs-dream";
 import { doDogsHaveBellyButtons } from "@/data/articles/dog-behavior/do-dogs-have-belly-buttons";
 import { howManyTeethDoDogsHave } from "@/data/articles/dog-behavior/how-many-teeth-do-dogs-have";
@@ -29,6 +33,9 @@ import { whyDoesMyDogHaveDiarrhea } from "@/data/articles/dog-health/why-does-my
 import { whyIsMyDogThrowingUp } from "@/data/articles/dog-health/why-is-my-dog-throwing-up";
 import { bestDogBowls } from "@/data/articles/dog-products/best-dog-bowls";
 import { bestDogCrates } from "@/data/articles/dog-products/best-dog-crates";
+import { bestDogPools } from "@/data/articles/dog-products/best-dog-pools";
+import { bestDogRamps } from "@/data/articles/dog-products/best-dog-ramps";
+import { dogLickMats } from "@/data/articles/dog-products/dog-lick-mats";
 import { howToCleanDogEars } from "@/data/articles/dog-grooming/how-to-clean-dog-ears";
 import { howToManageDogShedding } from "@/data/articles/dog-grooming/how-to-manage-dog-shedding";
 import { howOftenShouldYouBatheADog } from "@/data/articles/dog-grooming/how-often-should-you-bathe-a-dog";
@@ -79,8 +86,15 @@ export const articles: Article[] = [
   puppyTrainingBasics,
   bestFamilyDogs,
   bestApartmentDogs,
+  bestLowMaintenanceDogs,
+  hypoallergenicDogBreeds,
+  cutestDogBreeds,
+  bestGuardDogBreeds,
   bestDogCrates,
   bestDogBowls,
+  bestDogRamps,
+  bestDogPools,
+  dogLickMats,
   howToPottyTrainAPuppy,
   howLongCanDogsHoldTheirPee,
   howLongCanDogsGoWithoutWater,

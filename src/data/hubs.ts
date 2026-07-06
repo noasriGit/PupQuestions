@@ -304,10 +304,19 @@ const dogBreedsHub: HubConfig = {
     "No breed is perfect for every home. This hub groups breed guides by what owners usually prioritize — space, grooming, temperament, and experience level — so you can narrow choices before diving into individual profiles.",
   seoDescription:
     "Dog breed guides for families, apartments, low-maintenance pets, and first-time owners. Browse breed lists by lifestyle and temperament.",
-  featuredSlugs: ["best-family-dogs", "best-apartment-dogs"],
+  featuredSlugs: [
+    "best-family-dogs",
+    "best-apartment-dogs",
+    "best-low-maintenance-dogs",
+    "hypoallergenic-dog-breeds",
+  ],
   articleGroupMap: {
     "best-family-dogs": "family-dogs",
     "best-apartment-dogs": "apartment-dogs",
+    "best-low-maintenance-dogs": "low-maintenance",
+    "hypoallergenic-dog-breeds": "hypoallergenic",
+    "cutest-dog-breeds": "family-dogs",
+    "best-guard-dog-breeds": "guard-protection",
   },
   topicGroups: [
     {
@@ -432,10 +441,13 @@ const dogProductsHub: HubConfig = {
     "The right product depends on your dog. This hub groups buying guides by category — crates, bowls, grooming tools, and travel gear — with safety notes and what to prioritize before price or trends.",
   seoDescription:
     "Dog product guides for crates, bowls, grooming supplies, toys, and travel gear. Browse buying advice by product category.",
-  featuredSlugs: ["best-dog-crates", "best-dog-bowls"],
+  featuredSlugs: ["best-dog-crates", "best-dog-bowls", "best-dog-ramps"],
   articleGroupMap: {
     "best-dog-crates": "crates",
     "best-dog-bowls": "bowls",
+    "best-dog-ramps": "ramps",
+    "best-dog-pools": "pools",
+    "dog-lick-mats": "enrichment-toys",
   },
   topicGroups: [
     {

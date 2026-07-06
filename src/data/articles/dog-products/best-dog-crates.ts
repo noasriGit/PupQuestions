@@ -107,6 +107,11 @@ export const bestDogCrates: ProductGuideArticle = {
       slug: "best-dog-bowls",
       category: "dog-products",
     },
+    {
+      title: "Best dog ramps",
+      slug: "best-dog-ramps",
+      category: "dog-products",
+    },
   ],
   tags: ["crate", "products", "training", "puppy"],
   primaryKeyword: "best dog crates",

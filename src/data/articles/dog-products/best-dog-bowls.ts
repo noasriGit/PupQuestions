@@ -103,6 +103,11 @@ export const bestDogBowls: ProductGuideArticle = {
       category: "dog-products",
     },
     {
+      title: "Dog lick mats",
+      slug: "dog-lick-mats",
+      category: "dog-products",
+    },
+    {
       title: "Can dogs eat blueberries?",
       slug: "blueberries",
       category: "can-dogs-eat",

@@ -99,6 +99,11 @@ export const bestApartmentDogs: BreedListArticle = {
       category: "dog-breeds",
     },
     {
+      title: "Hypoallergenic dog breeds",
+      slug: "hypoallergenic-dog-breeds",
+      category: "dog-breeds",
+    },
+    {
       title: "How to stop a dog from pulling on the leash",
       slug: "how-to-stop-dog-pulling-on-leash",
       category: "dog-training",

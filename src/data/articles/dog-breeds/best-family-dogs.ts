@@ -107,6 +107,11 @@ export const bestFamilyDogs: BreedListArticle = {
       category: "dog-breeds",
     },
     {
+      title: "Best low-maintenance dogs",
+      slug: "best-low-maintenance-dogs",
+      category: "dog-breeds",
+    },
+    {
       title: "How to stop a dog from pulling on the leash",
       slug: "how-to-stop-dog-pulling-on-leash",
       category: "dog-training",
