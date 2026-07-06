@@ -67,6 +67,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             description="Search published PupQuestions guides by question, topic, tag, or keyword."
           />
           <SearchForm
+            key={`${query}-${category ?? "all"}`}
             defaultQuery={query}
             defaultCategory={category}
             className="mx-auto mt-8 max-w-xl text-left"

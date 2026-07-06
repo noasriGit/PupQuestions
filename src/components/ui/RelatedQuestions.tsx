@@ -22,7 +22,7 @@ export function RelatedQuestions({
 }: RelatedQuestionsProps) {
   return (
     <section className={className} aria-labelledby="related-questions-heading">
-      <SectionHeading title={title} />
+      <SectionHeading id="related-questions-heading" title={title} />
       <ul className="space-y-3">
         {questions.map((question) => (
           <li key={question.title}>

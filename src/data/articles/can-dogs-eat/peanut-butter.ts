@@ -97,13 +97,13 @@ export const peanutButter: FoodSafetyArticle = {
   ],
   relatedQuestions: [
     {
-      title: "Can dogs eat blueberries?",
-      slug: "blueberries",
+      title: "Can dogs eat almonds?",
+      slug: "almonds",
       category: "can-dogs-eat",
     },
     {
-      title: "Can dogs eat watermelon?",
-      slug: "watermelon",
+      title: "Can dogs eat cheese?",
+      slug: "cheese",
       category: "can-dogs-eat",
     },
   ],

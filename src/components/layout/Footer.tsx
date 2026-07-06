@@ -65,10 +65,14 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <span className="text-stone-400">Editorial standards (soon)</span>
+                <span className="text-stone-400" aria-disabled="true">
+                  Editorial standards — coming later
+                </span>
               </li>
               <li>
-                <span className="text-stone-400">Contact (soon)</span>
+                <span className="text-stone-400" aria-disabled="true">
+                  Contact — coming later
+                </span>
               </li>
             </ul>
           </div>

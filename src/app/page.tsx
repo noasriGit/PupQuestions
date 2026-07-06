@@ -93,9 +93,9 @@ export default function HomePage() {
           <div className="mx-auto max-w-3xl">
             <TrustNote title="Dog safety comes first">
               PupQuestions is built for responsible dog owners. Food safety and
-              health content will always prioritize clear risk labels, vet
-              guidance reminders, and practical next steps — so you can make
-              informed decisions and know when to call your veterinarian.
+              health content prioritizes clear risk labels, vet guidance
+              reminders, and practical next steps — so you can make informed
+              decisions and know when to call your veterinarian.
             </TrustNote>
           </div>
         </Container>

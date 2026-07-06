@@ -88,8 +88,8 @@ export const bananas: FoodSafetyArticle = {
   ],
   relatedQuestions: [
     {
-      title: "Can dogs eat blueberries?",
-      slug: "blueberries",
+      title: "Can dogs eat papaya?",
+      slug: "papaya",
       category: "can-dogs-eat",
     },
     {

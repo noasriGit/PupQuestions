@@ -1,7 +1,15 @@
+import { almonds } from "@/data/articles/can-dogs-eat/almonds";
 import { bananas } from "@/data/articles/can-dogs-eat/bananas";
 import { blueberries } from "@/data/articles/can-dogs-eat/blueberries";
+import { cheese } from "@/data/articles/can-dogs-eat/cheese";
+import { cinnamon } from "@/data/articles/can-dogs-eat/cinnamon";
+import { marshmallows } from "@/data/articles/can-dogs-eat/marshmallows";
+import { papaya } from "@/data/articles/can-dogs-eat/papaya";
 import { peanutButter } from "@/data/articles/can-dogs-eat/peanut-butter";
 import { pumpkin } from "@/data/articles/can-dogs-eat/pumpkin";
+import { rice } from "@/data/articles/can-dogs-eat/rice";
+import { shrimp } from "@/data/articles/can-dogs-eat/shrimp";
+import { turkey } from "@/data/articles/can-dogs-eat/turkey";
 import { watermelon } from "@/data/articles/can-dogs-eat/watermelon";
 import { bestApartmentDogs } from "@/data/articles/dog-breeds/best-apartment-dogs";
 import { bestFamilyDogs } from "@/data/articles/dog-breeds/best-family-dogs";
@@ -25,11 +33,19 @@ import type { Article, ContentCategory } from "@/types/content";
  * Add new articles here to expose them via routing and utilities.
  */
 export const articles: Article[] = [
+  almonds,
   bananas,
   blueberries,
-  watermelon,
+  cheese,
+  cinnamon,
+  marshmallows,
+  papaya,
   peanutButter,
   pumpkin,
+  rice,
+  shrimp,
+  turkey,
+  watermelon,
   whyIsMyDogThrowingUp,
   whyDoesMyDogHaveDiarrhea,
   canDogsTakeBenadryl,

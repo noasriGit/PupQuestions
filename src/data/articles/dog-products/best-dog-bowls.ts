@@ -115,5 +115,5 @@ export const bestDogBowls: ProductGuideArticle = {
   readingTime: 4,
   status: "published",
   editorialNote:
-    "Product guidance for educational purposes only. No affiliate links or sponsored recommendations in this sample article.",
+    "Product guidance for educational purposes only. No affiliate links or sponsored recommendations.",
 };

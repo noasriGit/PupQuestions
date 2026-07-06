@@ -21,6 +21,7 @@ export function HubFeaturedArticles({
   return (
     <section aria-labelledby="hub-featured-heading">
       <SectionHeading
+        id="hub-featured-heading"
         eyebrow="Start here"
         title="Featured questions"
         description={`Popular ${categoryTitle.toLowerCase()} guides with clear answers you can read in a few minutes.`}
@@ -48,6 +49,7 @@ export function HubRecentArticles({
   return (
     <section aria-labelledby="hub-recent-heading">
       <SectionHeading
+        id="hub-recent-heading"
         eyebrow="Latest"
         title="Recently added"
         description={
