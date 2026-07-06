@@ -11,4 +11,5 @@ export type SiteConfig = {
   url: string;
   description: string;
   tagline: string;
+  contactEmail: string;
 };

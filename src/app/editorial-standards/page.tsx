@@ -108,10 +108,9 @@ export default function EditorialStandardsPage() {
       <h2>Corrections policy</h2>
       <p>
         Readers can report issues through our{" "}
-        <Link href="/contact">contact page</Link> once a public email is
-        available. When we confirm an error or find a stronger source, we
-        update the affected page. Safety-related corrections are treated as a
-        priority.
+        <Link href="/contact">contact page</Link>. When we confirm an error or
+        find a stronger source, we update the affected page. Safety-related
+        corrections are treated as a priority.
       </p>
 
       <h2>Review policy</h2>

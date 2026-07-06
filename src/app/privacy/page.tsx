@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { TrustPageShell } from "@/components/trust/TrustPageShell";
+import { siteConfig } from "@/data/site";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
@@ -30,15 +31,20 @@ export default function PrivacyPage() {
 
       <h2>Information you provide</h2>
       <p>
-        If you contact PupQuestions in the future — for example, to report a
-        correction or send feedback — you may choose to share information such
-        as your name, email address, and the content of your message. We would
-        use that information only to respond to your inquiry and improve the
-        site as appropriate.
+        If you contact PupQuestions — for example, to report a correction or
+        send feedback — you may choose to share information such as your name,
+        email address, and the content of your message. We use that information
+        only to respond to your inquiry and improve the site as appropriate.
       </p>
       <p>
-        A public contact method will be added before launch. See our{" "}
-        <Link href="/contact">contact page</Link> for current details.
+        You can reach us at{" "}
+        <a
+          href={`mailto:${siteConfig.contactEmail}`}
+          className="font-medium text-amber-800 underline decoration-amber-300 underline-offset-2 transition hover:text-amber-900"
+        >
+          {siteConfig.contactEmail}
+        </a>{" "}
+        or through our <Link href="/contact">contact page</Link>.
       </p>
 
       <h2>Technical and log data</h2>
@@ -77,9 +83,15 @@ export default function PrivacyPage() {
       <p>
         PupQuestions is intended for a general audience of dog owners and is not
         directed at collecting personal information from children. If you believe
-        a child has provided personal information through a future contact
-        channel, please reach out once contact details are available so we can
-        address it.
+        a child has provided personal information through our contact email,
+        please reach out at{" "}
+        <a
+          href={`mailto:${siteConfig.contactEmail}`}
+          className="font-medium text-amber-800 underline decoration-amber-300 underline-offset-2 transition hover:text-amber-900"
+        >
+          {siteConfig.contactEmail}
+        </a>{" "}
+        so we can address it.
       </p>
 
       <h2>Policy updates</h2>

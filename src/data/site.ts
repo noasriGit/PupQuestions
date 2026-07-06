@@ -11,4 +11,5 @@ export const siteConfig: SiteConfig = {
   url: SITE_URL,
   description: SITE_DESCRIPTION,
   tagline: SITE_TAGLINE,
+  contactEmail: "help@pupquestions.com",
 };

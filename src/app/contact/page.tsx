@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { TrustPageShell } from "@/components/trust/TrustPageShell";
 import { DisclaimerBox } from "@/components/ui/DisclaimerBox";
+import { siteConfig } from "@/data/site";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
@@ -13,6 +14,8 @@ export const metadata: Metadata = createPageMetadata({
 });
 
 export default function ContactPage() {
+  const { contactEmail } = siteConfig;
+
   return (
     <TrustPageShell
       title="Contact"
@@ -26,8 +29,14 @@ export default function ContactPage() {
         especially when safety is involved.
       </p>
       <p>
-        A public contact email will be added before launch. Until then, this
-        page explains what to contact us about and how we handle requests.
+        Email us at{" "}
+        <a
+          href={`mailto:${contactEmail}`}
+          className="font-medium text-amber-800 underline decoration-amber-300 underline-offset-2 transition hover:text-amber-900"
+        >
+          {contactEmail}
+        </a>
+        .
       </p>
 
       <h2>Reasons to contact us</h2>
@@ -54,8 +63,14 @@ export default function ContactPage() {
       <p>
         If you believe a page contains incorrect or potentially harmful
         information — especially around food toxicity, medications, or emergency
-        symptoms — please flag it promptly once a contact email is available.
-        We review correction reports and update content when we confirm an
+        symptoms — please email us promptly at{" "}
+        <a
+          href={`mailto:${contactEmail}`}
+          className="font-medium text-amber-800 underline decoration-amber-300 underline-offset-2 transition hover:text-amber-900"
+        >
+          {contactEmail}
+        </a>
+        . We review correction reports and update content when we confirm an
         error or find a better source.
       </p>
       <p>
@@ -83,9 +98,8 @@ export default function ContactPage() {
 
       <h2>Privacy</h2>
       <p>
-        If you contact us in the future, any information you choose to share may
-        be handled as described on our{" "}
-        <Link href="/privacy">privacy policy</Link> page.
+        If you contact us, any information you choose to share may be handled as
+        described on our <Link href="/privacy">privacy policy</Link> page.
       </p>
     </TrustPageShell>
   );
