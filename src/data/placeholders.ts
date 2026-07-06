@@ -6,13 +6,13 @@ export type PlaceholderQuestion = {
 
 export const popularQuestions: PlaceholderQuestion[] = [
   {
-    title: "Can dogs eat grapes?",
-    href: "/can-dogs-eat",
+    title: "Can dogs eat blueberries?",
+    href: "/can-dogs-eat/blueberries",
     section: "Can Dogs Eat",
   },
   {
-    title: "Why is my dog eating grass?",
-    href: "/dog-behavior",
+    title: "Why do dogs eat grass?",
+    href: "/dog-behavior/why-do-dogs-eat-grass",
     section: "Dog Behavior",
   },
   {
@@ -21,13 +21,13 @@ export const popularQuestions: PlaceholderQuestion[] = [
     section: "Dog Grooming",
   },
   {
-    title: "When should puppies start training?",
-    href: "/dog-training",
+    title: "How to stop a dog pulling on the leash",
+    href: "/dog-training/how-to-stop-dog-pulling-on-leash",
     section: "Dog Training",
   },
   {
-    title: "What vaccines do puppies need?",
-    href: "/dog-health",
+    title: "Why is my dog throwing up?",
+    href: "/dog-health/why-is-my-dog-throwing-up",
     section: "Dog Health",
   },
 ];
