@@ -73,9 +73,14 @@ export const howOftenShouldYouBatheADog: GroomingArticle = {
   ],
   relatedQuestions: [
     {
-      title: "How to choose the best dog bowls",
-      slug: "best-dog-bowls",
-      category: "dog-products",
+      title: "How to clean dog ears",
+      slug: "how-to-clean-dog-ears",
+      category: "dog-grooming",
+    },
+    {
+      title: "How to manage dog shedding",
+      slug: "how-to-manage-dog-shedding",
+      category: "dog-grooming",
     },
     {
       title: "Why do dogs eat grass?",

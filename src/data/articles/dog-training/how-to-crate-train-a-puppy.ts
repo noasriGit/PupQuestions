@@ -70,6 +70,11 @@ export const howToCrateTrainAPuppy: TrainingArticle = {
   ],
   relatedQuestions: [
     {
+      title: "Puppy training basics",
+      slug: "puppy-training-basics",
+      category: "dog-training",
+    },
+    {
       title: "How to stop a dog from pulling on the leash",
       slug: "how-to-stop-dog-pulling-on-leash",
       category: "dog-training",

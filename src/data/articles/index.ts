@@ -29,10 +29,16 @@ import { whyDoesMyDogHaveDiarrhea } from "@/data/articles/dog-health/why-does-my
 import { whyIsMyDogThrowingUp } from "@/data/articles/dog-health/why-is-my-dog-throwing-up";
 import { bestDogBowls } from "@/data/articles/dog-products/best-dog-bowls";
 import { bestDogCrates } from "@/data/articles/dog-products/best-dog-crates";
+import { howToCleanDogEars } from "@/data/articles/dog-grooming/how-to-clean-dog-ears";
+import { howToManageDogShedding } from "@/data/articles/dog-grooming/how-to-manage-dog-shedding";
 import { howOftenShouldYouBatheADog } from "@/data/articles/dog-grooming/how-often-should-you-bathe-a-dog";
+import { howLongCanDogsGoWithoutWater } from "@/data/articles/puppy-care/how-long-can-dogs-go-without-water";
+import { howLongCanDogsHoldTheirPee } from "@/data/articles/puppy-care/how-long-can-dogs-hold-their-pee";
 import { howToPottyTrainAPuppy } from "@/data/articles/puppy-care/how-to-potty-train-a-puppy";
+import { whatIsTheDhppVaccineForDogs } from "@/data/articles/puppy-care/what-is-the-dhpp-vaccine-for-dogs";
 import { howToCrateTrainAPuppy } from "@/data/articles/dog-training/how-to-crate-train-a-puppy";
 import { howToStopDogPullingOnLeash } from "@/data/articles/dog-training/how-to-stop-dog-pulling-on-leash";
+import { puppyTrainingBasics } from "@/data/articles/dog-training/puppy-training-basics";
 import { isArticleIndexable } from "@/lib/indexing";
 import type { Article, ContentCategory } from "@/types/content";
 
@@ -70,12 +76,18 @@ export const articles: Article[] = [
   whyDoDogsSnore,
   howToStopDogPullingOnLeash,
   howToCrateTrainAPuppy,
+  puppyTrainingBasics,
   bestFamilyDogs,
   bestApartmentDogs,
   bestDogCrates,
   bestDogBowls,
   howToPottyTrainAPuppy,
+  howLongCanDogsHoldTheirPee,
+  howLongCanDogsGoWithoutWater,
+  whatIsTheDhppVaccineForDogs,
   howOftenShouldYouBatheADog,
+  howToCleanDogEars,
+  howToManageDogShedding,
 ];
 
 export function getAllArticles(): Article[] {

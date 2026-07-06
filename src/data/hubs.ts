@@ -249,10 +249,12 @@ const dogTrainingHub: HubConfig = {
   featuredSlugs: [
     "how-to-stop-dog-pulling-on-leash",
     "how-to-crate-train-a-puppy",
+    "puppy-training-basics",
   ],
   articleGroupMap: {
     "how-to-stop-dog-pulling-on-leash": "leash-training",
     "how-to-crate-train-a-puppy": "crate-training",
+    "puppy-training-basics": "puppy-training",
   },
   topicGroups: [
     {
@@ -361,9 +363,15 @@ const puppyCareHub: HubConfig = {
     "Puppies grow fast and need a plan. This hub organizes early-care topics so you can build routines for health, housetraining, crate comfort, and confidence — without guessing what to tackle first.",
   seoDescription:
     "Puppy care guides for new owners — feeding, potty training, crate training, socialization, and early health basics.",
-  featuredSlugs: ["how-to-potty-train-a-puppy"],
+  featuredSlugs: [
+    "how-to-potty-train-a-puppy",
+    "how-long-can-dogs-hold-their-pee",
+  ],
   articleGroupMap: {
     "how-to-potty-train-a-puppy": "potty-training",
+    "how-long-can-dogs-hold-their-pee": "potty-training",
+    "how-long-can-dogs-go-without-water": "new-puppy-basics",
+    "what-is-the-dhpp-vaccine-for-dogs": "puppy-health",
   },
   trustNote: {
     title: "Puppy care builds on good routines",
@@ -489,9 +497,14 @@ const dogGroomingHub: HubConfig = {
     "Regular grooming keeps dogs comfortable and makes health issues easier to spot early. This hub groups grooming topics by task so you can build a routine that matches your dog's coat, lifestyle, and tolerance.",
   seoDescription:
     "Dog grooming guides for bathing, brushing, nail trimming, ear cleaning, dental care, and shedding control.",
-  featuredSlugs: ["how-often-should-you-bathe-a-dog"],
+  featuredSlugs: [
+    "how-often-should-you-bathe-a-dog",
+    "how-to-clean-dog-ears",
+  ],
   articleGroupMap: {
     "how-often-should-you-bathe-a-dog": "bathing",
+    "how-to-clean-dog-ears": "ear-cleaning",
+    "how-to-manage-dog-shedding": "shedding",
   },
   trustNote: {
     title: "Grooming supports health, not just appearance",

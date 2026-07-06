@@ -80,6 +80,11 @@ export const howToPottyTrainAPuppy: PuppyCareArticle = {
   ],
   relatedQuestions: [
     {
+      title: "How long can dogs hold their pee?",
+      slug: "how-long-can-dogs-hold-their-pee",
+      category: "puppy-care",
+    },
+    {
       title: "How to crate train a puppy",
       slug: "how-to-crate-train-a-puppy",
       category: "dog-training",
