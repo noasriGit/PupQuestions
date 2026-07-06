@@ -12,6 +12,7 @@ import type {
   ArticleRelatedQuestion,
   ContentCategory,
   FoodSafetyArticle,
+  HealthArticle,
   SafetyLevel,
 } from "@/types/content";
 
@@ -59,9 +60,7 @@ export function getArticlePath(article: Article): string {
   return getArticleHref(article.category, article.slug);
 }
 
-export function isHealthArticle(
-  article: Article,
-): article is Article & { urgencyLevel: string } {
+export function isHealthArticle(article: Article): article is HealthArticle {
   return article.template === "health";
 }
 

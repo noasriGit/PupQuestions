@@ -1,6 +1,5 @@
-import type { ReactNode } from "react";
-
 import { FoodSafetyArticlePage } from "@/components/articles/FoodSafetyArticlePage";
+import { HealthArticlePage } from "@/components/articles/HealthArticlePage";
 import { ArticleBody } from "@/components/ui/ArticleBody";
 import { ArticleHeader } from "@/components/ui/ArticleHeader";
 import { Container } from "@/components/ui/Container";
@@ -9,7 +8,6 @@ import { FaqSection } from "@/components/ui/FaqSection";
 import { QuickAnswerBox } from "@/components/ui/QuickAnswerBox";
 import { RelatedQuestions } from "@/components/ui/RelatedQuestions";
 import { SourcesSection } from "@/components/ui/SourcesSection";
-import { TrustNote } from "@/components/ui/TrustNote";
 import { getSectionBySlug } from "@/data/sections";
 import {
   formatLastUpdated,
@@ -47,51 +45,10 @@ function ArticleSections({ sections }: { sections: ArticleSection[] }) {
   );
 }
 
-function getQuickAnswerLabel(article: Article): string {
-  if (isHealthArticle(article)) {
-    const labels: Record<string, string> = {
-      routine: "Quick answer",
-      monitor: "Monitor closely",
-      urgent: "Seek veterinary care",
-    };
-    return labels[article.urgencyLevel] ?? "Quick answer";
-  }
-  return "Quick answer";
-}
-
-function getTrustNote(article: Article): ReactNode | null {
-  if (isHealthArticle(article)) {
-    if (article.urgencyLevel === "urgent") {
-      return (
-        <>
-          If your dog shows severe or worsening symptoms, contact a veterinarian or
-          emergency clinic immediately. PupQuestions does not provide diagnosis or
-          emergency care.
-        </>
-      );
-    }
-    return (
-      <>
-        Health information here is educational, not a substitute for professional
-        veterinary advice. Contact your veterinarian for diagnosis, treatment, and
-        urgent symptoms.
-      </>
-    );
-  }
-  return null;
-}
-
-function shouldShowDisclaimer(article: Article): boolean {
-  return (
-    isHealthArticle(article) ||
-    article.template === "puppy-care"
-  );
-}
-
 function GenericArticlePage({ article }: ArticlePageProps) {
   const section = getSectionBySlug(article.category)!;
   const relatedQuestions = resolveRelatedQuestions(article.relatedQuestions);
-  const trustNote = getTrustNote(article);
+  const showDisclaimer = article.template === "puppy-care";
 
   return (
     <>
@@ -121,7 +78,7 @@ function GenericArticlePage({ article }: ArticlePageProps) {
       <Container size="narrow">
         <QuickAnswerBox
           variant="neutral"
-          label={getQuickAnswerLabel(article)}
+          label="Quick answer"
           className="mt-8"
         >
           {article.quickAnswer}
@@ -132,11 +89,7 @@ function GenericArticlePage({ article }: ArticlePageProps) {
           <ArticleSections sections={article.sections} />
         </ArticleBody>
 
-        {trustNote ? (
-          <TrustNote className="mb-8">{trustNote}</TrustNote>
-        ) : null}
-
-        {shouldShowDisclaimer(article) ? (
+        {showDisclaimer ? (
           <DisclaimerBox className="mb-10">
             PupQuestions provides general educational information only. It is not a
             substitute for professional veterinary advice, diagnosis, or treatment.
@@ -177,6 +130,10 @@ function GenericArticlePage({ article }: ArticlePageProps) {
 export function ArticlePage({ article }: ArticlePageProps) {
   if (isFoodSafetyArticle(article)) {
     return <FoodSafetyArticlePage article={article} />;
+  }
+
+  if (isHealthArticle(article)) {
+    return <HealthArticlePage article={article} />;
   }
 
   return <GenericArticlePage article={article} />;

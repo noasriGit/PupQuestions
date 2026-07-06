@@ -1,0 +1,164 @@
+import { ArticleBody } from "@/components/ui/ArticleBody";
+import { ArticleHeader } from "@/components/ui/ArticleHeader";
+import { Container } from "@/components/ui/Container";
+import { DisclaimerBox } from "@/components/ui/DisclaimerBox";
+import { FaqSection } from "@/components/ui/FaqSection";
+import { QuickAnswerBox } from "@/components/ui/QuickAnswerBox";
+import { RelatedQuestions } from "@/components/ui/RelatedQuestions";
+import { SourcesSection } from "@/components/ui/SourcesSection";
+import { TrustNote } from "@/components/ui/TrustNote";
+import {
+  EmergencySignsCallout,
+  HealthBlockContent,
+  HealthSection,
+  MedicationSafetyNote,
+  UrgencyStatusBadge,
+} from "@/components/articles/health/HealthSections";
+import { getSectionBySlug } from "@/data/sections";
+import {
+  formatLastUpdated,
+  formatReadingTime,
+  resolveRelatedQuestions,
+} from "@/lib/articles";
+import {
+  getUrgencyQuickAnswerLabel,
+  urgencyLevelToQuickAnswerVariant,
+} from "@/lib/health";
+import type { HealthArticle } from "@/types/content";
+
+type HealthArticlePageProps = {
+  article: HealthArticle;
+};
+
+export function HealthArticlePage({ article }: HealthArticlePageProps) {
+  const section = getSectionBySlug(article.category)!;
+  const relatedQuestions = resolveRelatedQuestions(article.relatedQuestions);
+
+  return (
+    <>
+      <ArticleHeader
+        title={article.title}
+        description={article.description}
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: section.title, href: section.href },
+          { label: article.title },
+        ]}
+        meta={
+          <>
+            <UrgencyStatusBadge level={article.urgencyLevel} />
+            <span aria-hidden="true">·</span>
+            <span>{formatReadingTime(article.readingTime)}</span>
+            <span aria-hidden="true">·</span>
+            <span>Updated {formatLastUpdated(article.lastUpdated)}</span>
+            {article.subcategory ? (
+              <>
+                <span aria-hidden="true">·</span>
+                <span>{article.subcategory}</span>
+              </>
+            ) : null}
+          </>
+        }
+      />
+
+      <Container size="narrow">
+        <DisclaimerBox title="Medical disclaimer" className="mt-8">
+          PupQuestions provides general educational information only. It is not a
+          substitute for professional veterinary advice, diagnosis, or treatment.
+          Always contact a licensed veterinarian for health concerns about your dog.
+          {article.editorialNote ? (
+            <>
+              {" "}
+              <span className="mt-2 block text-amber-900/90">
+                {article.editorialNote}
+              </span>
+            </>
+          ) : null}
+        </DisclaimerBox>
+
+        <QuickAnswerBox
+          variant={urgencyLevelToQuickAnswerVariant(article.urgencyLevel)}
+          label={getUrgencyQuickAnswerLabel(article.urgencyLevel)}
+          className="mt-6"
+        >
+          {article.quickAnswer}
+        </QuickAnswerBox>
+
+        <ArticleBody>
+          <p>{article.intro}</p>
+
+          <HealthSection heading={article.topicName}>
+            <HealthBlockContent {...article.overview} />
+          </HealthSection>
+
+          <HealthSection heading="Symptoms">
+            <HealthBlockContent {...article.symptoms} />
+          </HealthSection>
+
+          <HealthSection heading="Common causes">
+            <HealthBlockContent {...article.commonCauses} />
+          </HealthSection>
+
+          <HealthSection heading="What to do now">
+            <HealthBlockContent {...article.whatToDoNow} />
+          </HealthSection>
+
+          <HealthSection heading="What not to do">
+            <HealthBlockContent {...article.whatNotToDo} />
+          </HealthSection>
+
+          <HealthSection heading="When to call a vet">
+            <HealthBlockContent {...article.whenToCallVet} />
+          </HealthSection>
+
+          {article.emergencySigns ? (
+            <EmergencySignsCallout className="mt-8">
+              <HealthBlockContent {...article.emergencySigns} />
+            </EmergencySignsCallout>
+          ) : null}
+
+          {article.diagnosisTreatment ? (
+            <HealthSection heading="Diagnosis and treatment overview">
+              <HealthBlockContent {...article.diagnosisTreatment} />
+            </HealthSection>
+          ) : null}
+
+          {article.prevention ? (
+            <HealthSection heading="Prevention">
+              <HealthBlockContent {...article.prevention} />
+            </HealthSection>
+          ) : null}
+
+          {article.medicationSafetyNote ? (
+            <MedicationSafetyNote className="mt-8">
+              <HealthBlockContent {...article.medicationSafetyNote} />
+            </MedicationSafetyNote>
+          ) : null}
+        </ArticleBody>
+
+        <TrustNote className="mb-8">
+          Health information on PupQuestions is educational, not a substitute for
+          professional veterinary care. Contact your veterinarian for diagnosis,
+          treatment, and urgent symptoms — especially if your dog&apos;s condition
+          worsens or you are unsure what to do.
+        </TrustNote>
+
+        {article.sources && article.sources.length > 0 ? (
+          <SourcesSection sources={article.sources} className="mb-10" />
+        ) : null}
+
+        {relatedQuestions.length > 0 ? (
+          <RelatedQuestions
+            questions={relatedQuestions}
+            title="Related health questions"
+            className="mb-12"
+          />
+        ) : null}
+
+        {article.faqs.length > 0 ? (
+          <FaqSection items={article.faqs} className="mb-12" />
+        ) : null}
+      </Container>
+    </>
+  );
+}

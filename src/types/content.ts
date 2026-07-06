@@ -36,7 +36,15 @@ export type SafetyLevel =
   | "unsafe"
   | "toxic";
 
-export type UrgencyLevel = "routine" | "monitor" | "urgent";
+/**
+ * Urgency guidance for health articles.
+ * Maps to user-facing labels in the health template.
+ */
+export type UrgencyLevel =
+  | "monitor-at-home"
+  | "call-your-vet"
+  | "urgent-vet-care"
+  | "emergency";
 
 export type ArticleSection = {
   heading: string;
@@ -63,6 +71,12 @@ export type ArticleFaq = {
 
 /** Structured content block used in food safety template sections. */
 export type FoodSafetyBlock = {
+  paragraphs: string[];
+  listItems?: string[];
+};
+
+/** Structured content block used in health template sections. */
+export type HealthContentBlock = {
   paragraphs: string[];
   listItems?: string[];
 };
@@ -108,7 +122,18 @@ export type FoodSafetyArticle = ArticleCore & {
 export type HealthArticle = ArticleCore & {
   template: "health";
   category: "dog-health";
+  topicName: string;
   urgencyLevel: UrgencyLevel;
+  overview: HealthContentBlock;
+  symptoms: HealthContentBlock;
+  commonCauses: HealthContentBlock;
+  whatToDoNow: HealthContentBlock;
+  whatNotToDo: HealthContentBlock;
+  whenToCallVet: HealthContentBlock;
+  emergencySigns?: HealthContentBlock;
+  diagnosisTreatment?: HealthContentBlock;
+  prevention?: HealthContentBlock;
+  medicationSafetyNote?: HealthContentBlock;
 };
 
 export type BehaviorArticle = ArticleCore & {

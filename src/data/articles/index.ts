@@ -3,6 +3,8 @@ import { peanutButter } from "@/data/articles/can-dogs-eat/peanut-butter";
 import { watermelon } from "@/data/articles/can-dogs-eat/watermelon";
 import { bestFamilyDogs } from "@/data/articles/dog-breeds/best-family-dogs";
 import { whyDoDogsEatGrass } from "@/data/articles/dog-behavior/why-do-dogs-eat-grass";
+import { canDogsTakeBenadryl } from "@/data/articles/dog-health/can-dogs-take-benadryl";
+import { whyDoesMyDogHaveDiarrhea } from "@/data/articles/dog-health/why-does-my-dog-have-diarrhea";
 import { whyIsMyDogThrowingUp } from "@/data/articles/dog-health/why-is-my-dog-throwing-up";
 import { bestDogCrates } from "@/data/articles/dog-products/best-dog-crates";
 import { howToStopDogPullingOnLeash } from "@/data/articles/dog-training/how-to-stop-dog-pulling-on-leash";
@@ -17,6 +19,8 @@ export const articles: Article[] = [
   watermelon,
   peanutButter,
   whyIsMyDogThrowingUp,
+  whyDoesMyDogHaveDiarrhea,
+  canDogsTakeBenadryl,
   whyDoDogsEatGrass,
   howToStopDogPullingOnLeash,
   bestFamilyDogs,
