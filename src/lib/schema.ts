@@ -23,6 +23,28 @@ export function buildJsonLdGraph(
   };
 }
 
+export function buildTrustPageSchema(
+  path: string,
+  title: string,
+  description: string,
+): Record<string, unknown> {
+  const pageUrl = `${SITE_URL}${path}`;
+
+  return buildJsonLdGraph([
+    {
+      "@type": "WebPage",
+      name: title,
+      description,
+      url: pageUrl,
+      isPartOf: {
+        "@type": "WebSite",
+        name: SITE_NAME,
+        url: SITE_URL,
+      },
+    },
+  ]);
+}
+
 export function buildHomeSchema(): Record<string, unknown> {
   return buildJsonLdGraph([
     {

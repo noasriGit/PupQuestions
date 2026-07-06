@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { getIndexableArticles } from "@/data/articles";
 import { sections } from "@/data/sections";
+import { trustPages } from "@/data/trust-pages";
 import { getArticlesByCategory, getArticlePath } from "@/lib/articles";
 import { SITE_URL } from "@/lib/constants";
 import type { ContentCategory } from "@/types/content";
@@ -46,6 +47,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         )
       : new Date();
 
+  const trustPageEntries = trustPages.map((page) => ({
+    url: `${SITE_URL}${page.path}`,
+    lastModified: new Date(),
+    changeFrequency: "yearly" as const,
+    priority: 0.5,
+  }));
+
   return [
     {
       url: SITE_URL,
@@ -55,5 +63,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...sectionEntries,
     ...articleEntries,
+    ...trustPageEntries,
   ];
 }

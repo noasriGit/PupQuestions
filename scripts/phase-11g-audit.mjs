@@ -54,7 +54,7 @@ for (const { category, file, path } of articleFiles) {
   const status = statusMatch?.[1] ?? "unknown";
   const noindex = noindexMatch?.[1] === "true";
 
-  articleData.push({ category, slug, status, noindex, path: `/${category}/${slug}` });
+  articleData.push({ category, slug, status, noindex });
 
   if (status === "published" && !noindex) {
     const groupMapSection = hubsContent.split(`category: "${category}"`)[1]?.split("const ")[0] ?? "";
@@ -167,7 +167,8 @@ for (const [, cat, slug] of popularMatches) {
 
 // Sitemap expected count
 const sectionsCount = 8;
-const expectedIndexableUrls = 1 + sectionsCount + indexable.length;
+const trustPagesCount = 4;
+const expectedIndexableUrls = 1 + sectionsCount + trustPagesCount + indexable.length;
 
 // Search queries to verify (will output article matches from title/slug scan)
 const searchQueries = [
@@ -176,13 +177,13 @@ const searchQueries = [
   "belly buttons", "Fritos", "hold pee", "DHPP", "clean dog ears", "shedding", "puppy training",
 ];
 
-function articleSearchText(a, content) {
+function articleSearchText(slug, content) {
   const titleMatch = content.match(/title:\s*"([^"]+)"/);
   const descMatch = content.match(/description:\s*"([^"]+)"/);
   const tagsMatch = content.match(/tags:\s*\[([\s\S]*?)\]/);
   const kwMatch = content.match(/primaryKeyword:\s*"([^"]+)"/);
   const parts = [
-    a.slug,
+    slug,
     titleMatch?.[1],
     descMatch?.[1],
     kwMatch?.[1],
@@ -203,7 +204,7 @@ for (const query of searchQueries) {
 
     const slugMatch = content.match(/slug:\s*"([^"]+)"/);
     const slug = slugMatch?.[1] ?? file.replace(".ts", "");
-    const text = articleSearchText({ slug, category }, content);
+    const text = articleSearchText(slug, content);
     if (terms.every((t) => text.includes(t))) {
       matches.push(`/${category}/${slug}`);
     }
@@ -241,7 +242,7 @@ for (const cat of hubCategories) {
   console.log(`  ${cat}: ${indexableByCategory[cat] ?? 0}`);
 }
 console.log("\nExpected indexable URLs:", expectedIndexableUrls);
-console.log("  (1 homepage + 8 hubs +", indexable.length, "articles)");
+console.log("  (1 homepage + 8 hubs + 4 trust pages +", indexable.length, "articles)");
 
 console.log("\n=== Search query spot-check ===");
 for (const [query, matches] of Object.entries(searchResults)) {

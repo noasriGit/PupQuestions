@@ -60,19 +60,27 @@ export function Footer() {
             <p className="text-sm font-semibold text-stone-900">About</p>
             <ul className="mt-3 space-y-2.5 text-sm text-stone-600">
               <li>
-                <Link href="/" className="transition hover:text-amber-800">
-                  Home
+                <Link href="/about" className="transition hover:text-amber-800">
+                  About
                 </Link>
               </li>
               <li>
-                <span className="text-stone-400" aria-disabled="true">
-                  Editorial standards — coming later
-                </span>
+                <Link
+                  href="/editorial-standards"
+                  className="transition hover:text-amber-800"
+                >
+                  Editorial standards
+                </Link>
               </li>
               <li>
-                <span className="text-stone-400" aria-disabled="true">
-                  Contact — coming later
-                </span>
+                <Link href="/contact" className="transition hover:text-amber-800">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy" className="transition hover:text-amber-800">
+                  Privacy
+                </Link>
               </li>
             </ul>
           </div>
