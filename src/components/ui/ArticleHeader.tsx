@@ -1,8 +1,11 @@
 import type { ReactNode } from "react";
 
 import { Breadcrumb, type BreadcrumbItem } from "@/components/ui/Breadcrumb";
+import { CategoryIconBadge } from "@/components/ui/CategoryIconBadge";
 import { Container } from "@/components/ui/Container";
+import { getCategoryHeroClasses } from "@/components/ui/category-hero";
 import { cn } from "@/lib/cn";
+import type { ContentCategory } from "@/types/content";
 
 type ArticleHeaderProps = {
   title: string;
@@ -11,6 +14,10 @@ type ArticleHeaderProps = {
   meta?: ReactNode;
   className?: string;
   headingId?: string;
+  /** When set, applies a subtle category-themed gradient and border treatment. */
+  category?: ContentCategory;
+  /** Category emoji icon shown to the left of the header content. */
+  icon?: string;
 };
 
 export function ArticleHeader({
@@ -20,29 +27,49 @@ export function ArticleHeader({
   meta,
   className,
   headingId,
+  category,
+  icon,
 }: ArticleHeaderProps) {
   return (
-    <header className={cn("border-b border-stone-200 bg-white", className)}>
+    <header
+      className={cn(
+        category
+          ? getCategoryHeroClasses(category)
+          : "border-b border-stone-200 bg-white",
+        className,
+      )}
+    >
       <Container size="narrow" className="py-10 sm:py-12">
-        {breadcrumbs ? (
-          <Breadcrumb items={breadcrumbs} className="mb-4" />
-        ) : null}
-        <h1
-          id={headingId}
-          className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl lg:text-[2.5rem] lg:leading-tight"
-        >
-          {title}
-        </h1>
-        {description ? (
-          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-stone-600">
-            {description}
-          </p>
-        ) : null}
-        {meta ? (
-          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-stone-600">
-            {meta}
+        <div className={cn(icon && "flex items-start gap-4 sm:gap-5")}>
+          {icon ? (
+            <CategoryIconBadge
+              icon={icon}
+              category={category}
+              className="mt-0.5"
+            />
+          ) : null}
+          <div className={cn(icon && "min-w-0 flex-1")}>
+            {breadcrumbs ? (
+              <Breadcrumb items={breadcrumbs} className="mb-4" />
+            ) : null}
+            <h1
+              id={headingId}
+              className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl lg:text-[2.5rem] lg:leading-tight"
+            >
+              {title}
+            </h1>
+            {description ? (
+              <p className="mt-4 max-w-3xl text-lg leading-relaxed text-stone-600">
+                {description}
+              </p>
+            ) : null}
+            {meta ? (
+              <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-stone-600">
+                {meta}
+              </div>
+            ) : null}
           </div>
-        ) : null}
+        </div>
       </Container>
     </header>
   );

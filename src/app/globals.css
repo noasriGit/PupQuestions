@@ -148,3 +148,97 @@ a {
   font-style: italic;
   padding-left: 1rem;
 }
+
+/* Article category hero — gradients and borders only */
+.article-category-hero {
+  background-color: #ffffff;
+}
+
+.article-category-hero--can-dogs-eat {
+  background: linear-gradient(165deg, #fffbeb 0%, #fff7ed 42%, #ffffff 100%);
+  border-top: 1px solid rgb(251 191 36 / 0.12);
+  border-bottom: 1px solid #e8dcc8;
+}
+
+.article-category-hero--dog-health {
+  background: linear-gradient(
+    165deg,
+    #f0fdfa 0%,
+    #f8fafc 38%,
+    #fff8f7 72%,
+    #ffffff 100%
+  );
+  border-top: 1px solid rgb(45 212 191 / 0.12);
+  border-bottom: 1px solid #cdded9;
+}
+
+.article-category-hero--dog-behavior {
+  background: linear-gradient(
+    165deg,
+    #faf5ff 0%,
+    #fffbeb 44%,
+    #fafaf9 100%
+  );
+  border-top: 1px solid rgb(192 132 252 / 0.12);
+  border-bottom: 1px solid #ddd2c8;
+}
+
+.article-category-hero--dog-training {
+  background: linear-gradient(
+    165deg,
+    #ecfdf5 0%,
+    #f0fdf4 36%,
+    #fffbeb 74%,
+    #ffffff 100%
+  );
+  border-top: 1px solid rgb(52 211 153 / 0.12);
+  border-bottom: 1px solid #c9d9cc;
+}
+
+.article-category-hero--dog-breeds {
+  background: linear-gradient(
+    165deg,
+    #faf8f5 0%,
+    #f5f0e8 40%,
+    #fffbeb 78%,
+    #ffffff 100%
+  );
+  border-top: 1px solid rgb(180 83 9 / 0.1);
+  border-bottom: 1px solid #d9cfc0;
+}
+
+.article-category-hero--puppy-care {
+  background: linear-gradient(
+    165deg,
+    #fff5f0 0%,
+    #fffbeb 34%,
+    #f0f9ff 72%,
+    #ffffff 100%
+  );
+  border-top: 1px solid rgb(251 146 60 / 0.12);
+  border-bottom: 1px solid #e5d5c8;
+}
+
+.article-category-hero--dog-products {
+  background: linear-gradient(
+    165deg,
+    #f8fafc 0%,
+    #faf8f5 42%,
+    #fffbeb 78%,
+    #ffffff 100%
+  );
+  border-top: 1px solid rgb(100 116 139 / 0.1);
+  border-bottom: 1px solid #d4cfc8;
+}
+
+.article-category-hero--dog-grooming {
+  background: linear-gradient(
+    165deg,
+    #ecfeff 0%,
+    #f0f9ff 40%,
+    #f0fdfa 76%,
+    #ffffff 100%
+  );
+  border-top: 1px solid rgb(34 211 238 / 0.12);
+  border-bottom: 1px solid #c5dce0;
+}

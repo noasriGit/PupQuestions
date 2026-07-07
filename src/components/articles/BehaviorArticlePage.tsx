@@ -31,6 +31,7 @@ export function BehaviorArticlePage({ article }: BehaviorArticlePageProps) {
     <>
       <ArticleHeader
         headingId="article-title"
+        category={article.category}
         title={article.title}
         description={article.description}
         breadcrumbs={[

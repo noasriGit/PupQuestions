@@ -31,6 +31,7 @@ export function ProductGuideArticlePage({ article }: ProductGuideArticlePageProp
     <>
       <ArticleHeader
         headingId="article-title"
+        category={article.category}
         title={article.title}
         description={article.description}
         breadcrumbs={[

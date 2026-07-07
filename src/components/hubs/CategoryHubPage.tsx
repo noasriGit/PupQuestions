@@ -37,6 +37,8 @@ export function CategoryHubPage({ category }: CategoryHubPageProps) {
       <HubStructuredData category={category} />
       <ArticleHeader
         headingId="hub-title"
+        category={category}
+        icon={section.icon}
         title={section.title}
         description={hub.intro}
         breadcrumbs={[

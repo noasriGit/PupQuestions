@@ -30,6 +30,7 @@ export function TrainingArticlePage({ article }: TrainingArticlePageProps) {
     <>
       <ArticleHeader
         headingId="article-title"
+        category={article.category}
         title={article.title}
         description={article.description}
         breadcrumbs={[
