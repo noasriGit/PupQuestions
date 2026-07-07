@@ -99,7 +99,7 @@ export const marshmallows: FoodSafetyArticle = {
     {
       title: "Xylitol: The Sweetener That Is Not So Sweet for Pets",
       organization: "FDA",
-      url: "https://www.fda.gov/animal-veterinary/animal-health-literacy/paws-xylitol-its-dangerous-dogs",
+      url: "https://www.fda.gov/animal-veterinary/animal-health-literacy/paws-xylitol-toxic-dogs",
     },
   ],
   tags: ["marshmallows", "sweets", "xylitol", "sugar"],

@@ -137,7 +137,7 @@ export const wormsInDogs: HealthArticle = {
     {
       title: "Intestinal Parasites in Dogs",
       organization: "American Kennel Club",
-      url: "https://www.akc.org/expert-advice/health/intestinal-worms-in-dogs/",
+      url: "https://www.akc.org/expert-advice/health/worms-in-dogs/",
     },
   ],
   tags: ["worms", "parasites", "digestive", "fecal", "vet"],

@@ -146,7 +146,7 @@ export const canDogsTakeBenadryl: HealthArticle = {
     {
       title: "Diphenhydramine (Benadryl)",
       organization: "VCA Animal Hospitals",
-      url: "https://vcahospitals.com/know-your-pet/diphenhydramine-benadryl",
+      url: "https://vcahospitals.com/know-your-pet/diphenhydramine",
     },
   ],
   tags: ["benadryl", "medication", "allergies", "vet"],
