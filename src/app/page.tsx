@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { HomeHero } from "@/components/home/HomeHero";
 import { HomeStructuredData } from "@/components/seo/HomeStructuredData";
 import { CardGrid } from "@/components/ui/CardGrid";
 import { Container } from "@/components/ui/Container";
@@ -19,24 +20,22 @@ export default function HomePage() {
   return (
     <>
       <HomeStructuredData />
-      <section className="border-b border-stone-200 bg-white">
-        <Container className="py-14 sm:py-20">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-wide text-amber-700">
-              Dog owner questions, answered
-            </p>
-            <h1 className="mt-3 text-4xl font-bold tracking-tight text-stone-900 sm:text-5xl">
-              Trusted answers for every pup parent
-            </h1>
-            <p className="mt-4 text-lg leading-relaxed text-stone-600 sm:text-xl">
-              {siteConfig.name} is your friendly guide to nutrition, health,
-              behavior, training, breeds, puppy care, grooming, and products —
-              written for clarity, not clickbait.
-            </p>
-            <SearchForm className="mx-auto mt-8 max-w-xl text-left" showHint />
-          </div>
-        </Container>
-      </section>
+      <HomeHero>
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-wide text-amber-700">
+            Dog owner questions, answered
+          </p>
+          <h1 className="mt-3 text-4xl font-bold tracking-tight text-stone-900 sm:text-5xl">
+            Trusted answers for every pup parent
+          </h1>
+          <p className="mt-4 text-lg leading-relaxed text-stone-600 sm:text-xl">
+            {siteConfig.name} is your friendly guide to nutrition, health,
+            behavior, training, breeds, puppy care, grooming, and products —
+            written for clarity, not clickbait.
+          </p>
+          <SearchForm className="mx-auto mt-8 max-w-xl text-left" showHint />
+        </div>
+      </HomeHero>
 
       <section>
         <Container className="py-12 sm:py-16">
