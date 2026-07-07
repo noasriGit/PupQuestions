@@ -22,6 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
+      <head>
+        <script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="tMCNY9UlVAyAQDQK+1+Umg"
+          async
+        />
+      </head>
       <body className="flex min-h-full flex-col bg-stone-50 text-stone-900">
         <SkipLink />
         <Header />
