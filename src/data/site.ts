@@ -1,3 +1,4 @@
+import { adsConfig } from "@/data/ads";
 import {
   SITE_DESCRIPTION,
   SITE_NAME,
@@ -12,4 +13,5 @@ export const siteConfig: SiteConfig = {
   description: SITE_DESCRIPTION,
   tagline: SITE_TAGLINE,
   contactEmail: "help@pupquestions.com",
+  ads: adsConfig,
 };

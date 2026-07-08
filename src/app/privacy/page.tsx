@@ -58,17 +58,50 @@ export default function PrivacyPage() {
 
       <h2>Analytics and advertising</h2>
       <p>
-        PupQuestions does not currently use analytics tools or advertising
-        networks. If we add analytics, advertising, or similar services in the
-        future, we will update this page to describe what is collected and why.
+        PupQuestions uses Google AdSense, a Google advertising service, to show
+        ads on article pages. Google and other third-party vendors may use
+        cookies or similar technologies to serve those ads.
+      </p>
+      <p>
+        Google&apos;s use of advertising cookies enables it and its partners to
+        serve ads to you based on your visit to this site and/or other sites on
+        the Internet. PupQuestions does not currently use a separate analytics
+        service beyond what hosting and advertising partners may process when
+        delivering pages.
+      </p>
+      <p>
+        You can manage or opt out of personalized advertising through{" "}
+        <a
+          href="https://adssettings.google.com"
+          className="font-medium text-amber-800 underline decoration-amber-300 underline-offset-2 transition hover:text-amber-900"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Google Ads Settings
+        </a>
+        . For more about how Google uses data, see{" "}
+        <a
+          href="https://policies.google.com/privacy"
+          className="font-medium text-amber-800 underline decoration-amber-300 underline-offset-2 transition hover:text-amber-900"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Google&apos;s Privacy Policy
+        </a>
+        .
       </p>
 
       <h2>Cookies</h2>
       <p>
-        PupQuestions does not currently set analytics or advertising cookies as
-        part of the site experience. Basic cookies or similar technologies may
-        still be used by hosting or CDN infrastructure as needed to serve the
-        site. If cookie use changes materially, this policy will be updated.
+        Third-party vendors, including Google, may set advertising cookies when
+        you visit PupQuestions article pages. Those cookies help deliver ads and
+        may be used to show ads based on your activity on this site and other
+        sites.
+      </p>
+      <p>
+        Basic cookies or similar technologies may also be used by hosting or CDN
+        infrastructure as needed to serve the site. If cookie use changes
+        materially, this policy will be updated.
       </p>
 
       <h2>Third-party links</h2>
