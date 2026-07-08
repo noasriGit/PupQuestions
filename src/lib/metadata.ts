@@ -47,6 +47,15 @@ export function createPageMetadata({
   const base: Metadata = {
     description,
     metadataBase: new URL(SITE_URL),
+    icons: {
+      icon: [
+        { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+        { url: "/favicon.svg", type: "image/svg+xml" },
+      ],
+      shortcut: "/favicon.ico",
+      apple: "/apple-touch-icon.png",
+    },
+    manifest: "/site.webmanifest",
     openGraph: {
       title: pageTitle,
       description,
