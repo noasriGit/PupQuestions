@@ -28,6 +28,11 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6571939127757088"
           crossOrigin="anonymous"
         />
+        <script
+          async
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="tMCNY9UlVAyAQDQK+1+Umg"
+        />
       </head>
       <body className="flex min-h-full flex-col bg-stone-50 text-stone-900">
         <SkipLink />
