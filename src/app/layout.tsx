@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { SkipLink } from "@/components/ui/SkipLink";
+import { ADSENSE_CLIENT_ID } from "@/lib/constants";
 import { createPageMetadata } from "@/lib/metadata";
 
 import "./globals.css";
@@ -30,7 +31,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6571939127757088"
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
           crossOrigin="anonymous"
         />
         <script

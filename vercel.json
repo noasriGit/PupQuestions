@@ -1,0 +1,30 @@
+{
+  "redirects": [
+    {
+      "source": "/ads.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "pupquestions.com"
+        }
+      ],
+      "destination": "https://www.pupquestions.com/ads.txt",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/ads.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
+      ]
+    }
+  ]
+}
