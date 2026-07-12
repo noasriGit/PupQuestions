@@ -69,6 +69,11 @@ export const puppyTrainingBasics: TrainingArticle = {
   ],
   relatedQuestions: [
     {
+      title: "Resource guarding in dogs",
+      slug: "resource-guarding-in-dogs",
+      category: "dog-training",
+    },
+    {
       title: "How to crate train a puppy",
       slug: "how-to-crate-train-a-puppy",
       category: "dog-training",

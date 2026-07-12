@@ -16,6 +16,8 @@ const canDogsEatHub: HubConfig = {
     blueberries: "fruits",
     cheese: "dairy",
     cinnamon: "ingredients-supplements",
+    figs: "fruits",
+    fish: "meats-proteins",
     marshmallows: "sweets-desserts",
     papaya: "fruits",
     "peanut-butter": "ingredients-supplements",
@@ -105,6 +107,8 @@ const dogHealthHub: HubConfig = {
     "why-is-my-dog-throwing-up": "digestion",
     "why-does-my-dog-have-diarrhea": "digestion",
     "can-dogs-take-benadryl": "medications",
+    "do-mosquitoes-bite-dogs": "parasites",
+    "hyperkeratosis-in-dogs": "skin-coat",
     "ringworm-in-dogs": "skin-coat",
     "worms-in-dogs": "parasites",
     "uti-symptoms-in-dogs": "symptoms",
@@ -189,6 +193,7 @@ const dogBehaviorHub: HubConfig = {
     "why-do-dogs-eat-poop": "eating-odd-things",
     "do-dogs-dream": "sleep-dreams",
     "do-dogs-have-belly-buttons": "body-language",
+    "do-dogs-like-kisses": "body-language",
     "how-many-teeth-do-dogs-have": "body-language",
     "why-do-dogs-cry": "emotions-attachment",
     "why-do-dogs-get-hiccups": "body-language",
@@ -260,6 +265,7 @@ const dogTrainingHub: HubConfig = {
     "how-to-stop-dog-pulling-on-leash": "leash-training",
     "how-to-crate-train-a-puppy": "crate-training",
     "puppy-training-basics": "puppy-training",
+    "resource-guarding-in-dogs": "behavior-correction",
   },
   topicGroups: [
     {
@@ -319,6 +325,7 @@ const dogBreedsHub: HubConfig = {
     "best-family-dogs": "family-dogs",
     "best-apartment-dogs": "apartment-dogs",
     "best-low-maintenance-dogs": "low-maintenance",
+    "curly-haired-dog-breeds": "coat-types",
     "hypoallergenic-dog-breeds": "hypoallergenic",
     "cutest-dog-breeds": "family-dogs",
     "best-guard-dog-breeds": "guard-protection",
@@ -361,6 +368,12 @@ const dogBreedsHub: HubConfig = {
         "Forgiving temperaments and manageable needs for people new to dog ownership.",
     },
     {
+      id: "coat-types",
+      title: "Coat types",
+      description:
+        "Curly, wavy, and low-shedding coats — grooming needs, allergy notes, and breed examples.",
+    },
+    {
       id: "guard-protection",
       title: "Guard & protection dogs",
       description:
@@ -384,6 +397,7 @@ const puppyCareHub: HubConfig = {
   articleGroupMap: {
     "how-to-potty-train-a-puppy": "potty-training",
     "how-long-can-dogs-hold-their-pee": "potty-training",
+    "how-long-are-dogs-pregnant": "reproduction",
     "how-long-can-dogs-go-without-water": "new-puppy-basics",
     "what-is-the-dhpp-vaccine-for-dogs": "puppy-health",
   },
@@ -430,6 +444,12 @@ const puppyCareHub: HubConfig = {
         "Vaccines, deworming, parasite prevention, and signs that need a same-day vet call.",
     },
     {
+      id: "reproduction",
+      title: "Reproduction & pregnancy",
+      description:
+        "Gestation timelines, breeding awareness, and when veterinary care is essential for pregnant dogs.",
+    },
+    {
       id: "socialization",
       title: "Socialization",
       description:
@@ -448,6 +468,7 @@ const dogProductsHub: HubConfig = {
     "Dog product guides for crates, bowls, grooming supplies, toys, and travel gear. Browse buying advice by product category.",
   featuredSlugs: ["best-dog-crates", "best-dog-bowls", "best-dog-ramps"],
   articleGroupMap: {
+    "are-greenies-good-for-dogs": "dental-chews",
     "best-dog-crates": "crates",
     "best-dog-bowls": "bowls",
     "best-dog-ramps": "ramps",
@@ -486,6 +507,12 @@ const dogProductsHub: HubConfig = {
         "Puzzle feeders, chew toys, and interactive play — durability and safety considerations.",
     },
     {
+      id: "dental-chews",
+      title: "Dental chews & oral care",
+      description:
+        "Dental treats, chew safety, and how retail products fit alongside veterinary dental care.",
+    },
+    {
       id: "fences",
       title: "Fences",
       description:
@@ -519,6 +546,7 @@ const dogGroomingHub: HubConfig = {
     "how-to-clean-dog-ears",
   ],
   articleGroupMap: {
+    "can-you-use-human-shampoo-on-dogs": "bathing",
     "how-often-should-you-bathe-a-dog": "bathing",
     "how-to-clean-dog-ears": "ear-cleaning",
     "how-to-manage-dog-shedding": "shedding",

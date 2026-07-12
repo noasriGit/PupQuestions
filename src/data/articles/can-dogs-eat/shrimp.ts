@@ -89,6 +89,11 @@ export const shrimp: FoodSafetyArticle = {
   ],
   relatedQuestions: [
     {
+      title: "Can dogs eat fish?",
+      slug: "fish",
+      category: "can-dogs-eat",
+    },
+    {
       title: "Can dogs eat turkey?",
       slug: "turkey",
       category: "can-dogs-eat",

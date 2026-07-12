@@ -98,6 +98,11 @@ export const bestDogBowls: ProductGuideArticle = {
   ],
   relatedQuestions: [
     {
+      title: "Resource guarding in dogs",
+      slug: "resource-guarding-in-dogs",
+      category: "dog-training",
+    },
+    {
       title: "How to choose the best dog crate",
       slug: "best-dog-crates",
       category: "dog-products",

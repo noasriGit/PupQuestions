@@ -3,6 +3,8 @@ import { bananas } from "@/data/articles/can-dogs-eat/bananas";
 import { blueberries } from "@/data/articles/can-dogs-eat/blueberries";
 import { cheese } from "@/data/articles/can-dogs-eat/cheese";
 import { cinnamon } from "@/data/articles/can-dogs-eat/cinnamon";
+import { figs } from "@/data/articles/can-dogs-eat/figs";
+import { fish } from "@/data/articles/can-dogs-eat/fish";
 import { marshmallows } from "@/data/articles/can-dogs-eat/marshmallows";
 import { papaya } from "@/data/articles/can-dogs-eat/papaya";
 import { peanutButter } from "@/data/articles/can-dogs-eat/peanut-butter";
@@ -15,10 +17,12 @@ import { bestApartmentDogs } from "@/data/articles/dog-breeds/best-apartment-dog
 import { bestFamilyDogs } from "@/data/articles/dog-breeds/best-family-dogs";
 import { bestGuardDogBreeds } from "@/data/articles/dog-breeds/best-guard-dog-breeds";
 import { bestLowMaintenanceDogs } from "@/data/articles/dog-breeds/best-low-maintenance-dogs";
+import { curlyHairedDogBreeds } from "@/data/articles/dog-breeds/curly-haired-dog-breeds";
 import { cutestDogBreeds } from "@/data/articles/dog-breeds/cutest-dog-breeds";
 import { hypoallergenicDogBreeds } from "@/data/articles/dog-breeds/hypoallergenic-dog-breeds";
 import { doDogsDream } from "@/data/articles/dog-behavior/do-dogs-dream";
 import { doDogsHaveBellyButtons } from "@/data/articles/dog-behavior/do-dogs-have-belly-buttons";
+import { doDogsLikeKisses } from "@/data/articles/dog-behavior/do-dogs-like-kisses";
 import { howManyTeethDoDogsHave } from "@/data/articles/dog-behavior/how-many-teeth-do-dogs-have";
 import { whyDoDogsCry } from "@/data/articles/dog-behavior/why-do-dogs-cry";
 import { whyDoDogsEatGrass } from "@/data/articles/dog-behavior/why-do-dogs-eat-grass";
@@ -30,20 +34,25 @@ import { whyDoDogsSneeze } from "@/data/articles/dog-behavior/why-do-dogs-sneeze
 import { whyDoDogsSnore } from "@/data/articles/dog-behavior/why-do-dogs-snore";
 import { canDogsTakeBenadryl } from "@/data/articles/dog-health/can-dogs-take-benadryl";
 import { colitisInDogs } from "@/data/articles/dog-health/colitis-in-dogs";
+import { doMosquitoesBiteDogs } from "@/data/articles/dog-health/do-mosquitoes-bite-dogs";
+import { hyperkeratosisInDogs } from "@/data/articles/dog-health/hyperkeratosis-in-dogs";
 import { ringwormInDogs } from "@/data/articles/dog-health/ringworm-in-dogs";
 import { signsOfEarInfectionInDogs } from "@/data/articles/dog-health/signs-of-ear-infection-in-dogs";
 import { utiSymptomsInDogs } from "@/data/articles/dog-health/uti-symptoms-in-dogs";
 import { whyDoesMyDogHaveDiarrhea } from "@/data/articles/dog-health/why-does-my-dog-have-diarrhea";
 import { whyIsMyDogThrowingUp } from "@/data/articles/dog-health/why-is-my-dog-throwing-up";
 import { wormsInDogs } from "@/data/articles/dog-health/worms-in-dogs";
+import { areGreeniesGoodForDogs } from "@/data/articles/dog-products/are-greenies-good-for-dogs";
 import { bestDogBowls } from "@/data/articles/dog-products/best-dog-bowls";
 import { bestDogCrates } from "@/data/articles/dog-products/best-dog-crates";
 import { bestDogPools } from "@/data/articles/dog-products/best-dog-pools";
 import { bestDogRamps } from "@/data/articles/dog-products/best-dog-ramps";
 import { dogLickMats } from "@/data/articles/dog-products/dog-lick-mats";
+import { canYouUseHumanShampooOnDogs } from "@/data/articles/dog-grooming/can-you-use-human-shampoo-on-dogs";
 import { howToCleanDogEars } from "@/data/articles/dog-grooming/how-to-clean-dog-ears";
 import { howToManageDogShedding } from "@/data/articles/dog-grooming/how-to-manage-dog-shedding";
 import { howOftenShouldYouBatheADog } from "@/data/articles/dog-grooming/how-often-should-you-bathe-a-dog";
+import { howLongAreDogsPregnant } from "@/data/articles/puppy-care/how-long-are-dogs-pregnant";
 import { howLongCanDogsGoWithoutWater } from "@/data/articles/puppy-care/how-long-can-dogs-go-without-water";
 import { howLongCanDogsHoldTheirPee } from "@/data/articles/puppy-care/how-long-can-dogs-hold-their-pee";
 import { howToPottyTrainAPuppy } from "@/data/articles/puppy-care/how-to-potty-train-a-puppy";
@@ -51,6 +60,7 @@ import { whatIsTheDhppVaccineForDogs } from "@/data/articles/puppy-care/what-is-
 import { howToCrateTrainAPuppy } from "@/data/articles/dog-training/how-to-crate-train-a-puppy";
 import { howToStopDogPullingOnLeash } from "@/data/articles/dog-training/how-to-stop-dog-pulling-on-leash";
 import { puppyTrainingBasics } from "@/data/articles/dog-training/puppy-training-basics";
+import { resourceGuardingInDogs } from "@/data/articles/dog-training/resource-guarding-in-dogs";
 import { isArticleIndexable } from "@/lib/indexing";
 import type { Article, ContentCategory } from "@/types/content";
 
@@ -64,6 +74,8 @@ export const articles: Article[] = [
   blueberries,
   cheese,
   cinnamon,
+  figs,
+  fish,
   marshmallows,
   papaya,
   peanutButter,
@@ -80,7 +92,10 @@ export const articles: Article[] = [
   utiSymptomsInDogs,
   signsOfEarInfectionInDogs,
   colitisInDogs,
+  doMosquitoesBiteDogs,
+  hyperkeratosisInDogs,
   doDogsDream,
+  doDogsLikeKisses,
   doDogsHaveBellyButtons,
   howManyTeethDoDogsHave,
   whyDoDogsCry,
@@ -94,21 +109,26 @@ export const articles: Article[] = [
   howToStopDogPullingOnLeash,
   howToCrateTrainAPuppy,
   puppyTrainingBasics,
+  resourceGuardingInDogs,
   bestFamilyDogs,
+  curlyHairedDogBreeds,
   bestApartmentDogs,
   bestLowMaintenanceDogs,
   hypoallergenicDogBreeds,
   cutestDogBreeds,
   bestGuardDogBreeds,
+  areGreeniesGoodForDogs,
   bestDogCrates,
   bestDogBowls,
   bestDogRamps,
   bestDogPools,
   dogLickMats,
+  howLongAreDogsPregnant,
   howToPottyTrainAPuppy,
   howLongCanDogsHoldTheirPee,
   howLongCanDogsGoWithoutWater,
   whatIsTheDhppVaccineForDogs,
+  canYouUseHumanShampooOnDogs,
   howOftenShouldYouBatheADog,
   howToCleanDogEars,
   howToManageDogShedding,

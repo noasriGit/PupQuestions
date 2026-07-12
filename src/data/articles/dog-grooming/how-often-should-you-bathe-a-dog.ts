@@ -73,6 +73,11 @@ export const howOftenShouldYouBatheADog: GroomingArticle = {
   ],
   relatedQuestions: [
     {
+      title: "Can you use human shampoo on dogs?",
+      slug: "can-you-use-human-shampoo-on-dogs",
+      category: "dog-grooming",
+    },
+    {
       title: "How to clean dog ears",
       slug: "how-to-clean-dog-ears",
       category: "dog-grooming",

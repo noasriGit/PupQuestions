@@ -111,6 +111,11 @@ export const hypoallergenicDogBreeds: BreedListArticle = {
   ],
   relatedQuestions: [
     {
+      title: "Curly-haired dog breeds",
+      slug: "curly-haired-dog-breeds",
+      category: "dog-breeds",
+    },
+    {
       title: "Best low-maintenance dogs",
       slug: "best-low-maintenance-dogs",
       category: "dog-breeds",
