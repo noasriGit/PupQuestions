@@ -7,12 +7,27 @@ import {
 } from "@/lib/breadcrumbs";
 import {
   SITE_DESCRIPTION,
+  SITE_LOGO_URL,
   SITE_NAME,
   SITE_URL,
 } from "@/lib/constants";
 import type { Article, ArticleFaq, ContentCategory } from "@/types/content";
 import { getHubConfigOrThrow } from "@/data/hubs";
 import { getSectionBySlug } from "@/data/sections";
+
+function buildOrganizationSchema(): Record<string, unknown> {
+  return {
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: {
+      "@type": "ImageObject",
+      url: SITE_LOGO_URL,
+      width: 96,
+      height: 96,
+    },
+  };
+}
 
 export function buildJsonLdGraph(
   nodes: Record<string, unknown>[],
@@ -52,11 +67,7 @@ export function buildHomeSchema(): Record<string, unknown> {
       name: SITE_NAME,
       url: SITE_URL,
       description: SITE_DESCRIPTION,
-      publisher: {
-        "@type": "Organization",
-        name: SITE_NAME,
-        url: SITE_URL,
-      },
+      publisher: buildOrganizationSchema(),
       potentialAction: {
         "@type": "SearchAction",
         target: {
@@ -115,11 +126,7 @@ export function buildArticlePostingSchema(article: Article): Record<string, unkn
     },
     datePublished: article.lastUpdated,
     dateModified: article.lastUpdated,
-    publisher: {
-      "@type": "Organization",
-      name: SITE_NAME,
-      url: SITE_URL,
-    },
+    publisher: buildOrganizationSchema(),
   };
 }
 
