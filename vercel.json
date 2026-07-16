@@ -1,14 +1,14 @@
 {
   "redirects": [
     {
-      "source": "/ads.txt",
+      "source": "/:path*",
       "has": [
         {
           "type": "host",
           "value": "pupquestions.com"
         }
       ],
-      "destination": "https://www.pupquestions.com/ads.txt",
+      "destination": "https://www.pupquestions.com/:path*",
       "permanent": true
     }
   ],
