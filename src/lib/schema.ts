@@ -162,3 +162,42 @@ export function buildArticleSchema(article: Article): Record<string, unknown> {
 
   return buildJsonLdGraph(nodes);
 }
+
+export function buildSitemapPageSchema(
+  entries: Array<{ title: string; url: string; description?: string }>,
+): Record<string, unknown> {
+  const pageUrl = `${SITE_URL}/sitemap`;
+
+  return buildJsonLdGraph([
+    {
+      "@type": "CollectionPage",
+      name: "Sitemap",
+      description:
+        "Browse every published PupQuestions page by topic, including dog care guides, category hubs, and site information.",
+      url: pageUrl,
+      isPartOf: {
+        "@type": "WebSite",
+        name: SITE_NAME,
+        url: SITE_URL,
+      },
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: entries.length,
+        itemListElement: entries.map((entry, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: entry.title,
+          url: `${SITE_URL}${entry.url}`,
+          ...(entry.description ? { description: entry.description } : {}),
+        })),
+      },
+    },
+    breadcrumbItemsToSchema(
+      [
+        { label: "Home", href: "/" },
+        { label: "Sitemap" },
+      ],
+      pageUrl,
+    ),
+  ]);
+}

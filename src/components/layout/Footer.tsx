@@ -131,6 +131,16 @@ export function Footer() {
                   Privacy
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  href="/sitemap"
+                  exact
+                  className="transition hover:text-amber-800"
+                  activeClassName={footerActiveClassName}
+                >
+                  Sitemap
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
